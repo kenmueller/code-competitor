@@ -1,0 +1,9 @@
+{
+	"name": "code-competitor",
+	"scripts": {
+		"build": "npm run build -C public",
+		"predeploy": "npm run build",
+		"deploy": "firebase deploy"
+	},
+	"private": true
+}
