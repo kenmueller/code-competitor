@@ -54,6 +54,10 @@ $container-link-color: #82aaff;
 		@media (min-width: $large-font-size-breakpoint) {
 			font-size: 36px;
 		}
+		
+		+ h2 {
+			margin-top: 0;
+		}
 	}
 	
 	h2 {
