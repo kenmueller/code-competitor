@@ -61,9 +61,15 @@ $container-link-color: #82aaff;
 	}
 	
 	p,
-	ul {
+	ul,
+	pre,
+	code {
 		font-size: 20px;
 		font-weight: bold;
+	}
+	
+	p {
+		line-height: 30px;
 	}
 	
 	ul {
@@ -89,5 +95,25 @@ $container-link-color: #82aaff;
 	blockquote {
 		padding-left: 12px;
 		border-left: thick solid $container-text-color;
+	}
+	
+	pre,
+	code {
+		background: #202331;
+		border-radius: 5px;
+	}
+	
+	pre {
+		padding: 8px 20px;
+		border-radius: 5px;
+		
+		code {
+			padding: 0;
+		}
+	}
+	
+	code {
+		padding: 2px 4px;
+		color: #f78c6c;
 	}
 }
