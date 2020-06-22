@@ -1,5 +1,8 @@
 $large-font-size-breakpoint: 505px;
 
+$container-text-color: #b2ccd6;
+$container-link-color: #82aaff;
+
 .root {
 	display: flex;
 	flex-direction: column;
@@ -9,15 +12,11 @@ $large-font-size-breakpoint: 505px;
 	background: linear-gradient(to bottom, #a548e2, #5893eb);
 }
 
-.title,
-.innerTitle {
-	word-wrap: break-word;
-	font-weight: 900;
-}
-
 .title {
 	margin-bottom: 30px;
+	word-wrap: break-word;
 	font-size: 32px;
+	font-weight: 900;
 	color: white;
 	
 	@media (min-width: $large-font-size-breakpoint) {
@@ -34,31 +33,61 @@ $large-font-size-breakpoint: 505px;
 	width: 100%;
 	padding: 30px;
 	overflow: auto;
-	color: #b2ccd6;
+	color: $container-text-color;
 	background: #292d3e;
 	border-radius: 15px;
-}
-
-.innerTitle {
-	font-size: 28px;
 	
-	@media (min-width: $large-font-size-breakpoint) {
-		font-size: 36px;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 30px;
+		word-wrap: break-word;
+		font-weight: 900;
 	}
-}
-
-.description {
-	margin: 30px 0;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.description > a {
-	text-decoration: none;
-	font-weight: 900;
-	color: #82aaff
-}
-
-.description > a:hover {
-	text-decoration: underline;
+	
+	h1 {
+		font-size: 28px;
+		
+		@media (min-width: $large-font-size-breakpoint) {
+			font-size: 36px;
+		}
+	}
+	
+	h2 {
+		margin: 30px 0;
+	}
+	
+	p,
+	ul {
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	ul {
+		padding-left: 30px;
+	}
+	
+	li:not(:first-child),
+	ul ul li {
+		margin-top: 10px;
+	}
+	
+	a {
+		text-decoration: none;
+		font-weight: 900;
+		color: $container-link-color;
+		
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+	
+	blockquote {
+		padding-left: 12px;
+		border-left: thick solid $container-text-color;
+	}
 }
