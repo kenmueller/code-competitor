@@ -1,0 +1,18 @@
+.button {
+	$background: #0c71ac;
+	
+	width: max-content;
+	padding: 8px 20px;
+	font-size: 18px;
+	font-weight: 900;
+	color: #b2ccd6;
+	background: $background;
+	outline: none;
+	border-radius: 8px;
+	transition: background 0.3s;
+	
+	&:hover,
+	&:focus {
+		background: transparentize($background, 0.5);
+	}
+}
