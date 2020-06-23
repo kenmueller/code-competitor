@@ -1,8 +1,8 @@
 import Layout from 'components/Layout'
-import Document, { title } from 'documents/index.mdx'
+import Document, { metadata } from 'documents/index.mdx'
 
 const Home = () => (
-	<Layout title={title}>
+	<Layout {...metadata}>
 		<Document />
 	</Layout>
 )

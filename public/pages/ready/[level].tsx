@@ -7,11 +7,11 @@ import Layout from 'components/Layout'
 const ReadinessTest = ({ level }: { level: string }) => {
 	const {
 		default: Document,
-		title
+		metadata
 	} = require(`documents/readiness-tests/${level}.mdx`)
 	
 	return (
-		<Layout title={title}>
+		<Layout {...metadata}>
 			<Document />
 		</Layout>
 	)
