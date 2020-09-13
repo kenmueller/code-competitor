@@ -1,0 +1,31 @@
+$-width: 140px;
+$-height: 176px;
+
+@mixin -base {
+	position: relative;
+	
+	&::after {
+		content: '';
+		position: absolute;
+		width: $-width;
+		height: $-height;
+		bottom: -$-height / 2;
+		background: radial-gradient(#6bb8f5 25%, transparent 25%);
+		background-size: 20px 20px;
+		opacity: 0.3;
+		
+		@content;
+	}
+}
+
+@mixin left {
+	@include -base {
+		left: 0;
+	};
+}
+
+@mixin right {
+	@include -base {
+		right: 0;
+	};
+}
