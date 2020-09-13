@@ -1,4 +1,8 @@
+@use '../dots';
+
 .root {
+	@include dots.right;
+	
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
