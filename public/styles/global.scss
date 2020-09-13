@@ -8,6 +8,10 @@
 	border: none;
 }
 
+body {
+	overscroll-behavior: none;
+}
+
 button {
 	cursor: pointer;
 	
