@@ -1,0 +1,39 @@
+.root {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px 145px;
+}
+
+.logo,
+.menu {
+	transition: transform 0.3s;
+	
+	&:active {
+		transform: translateY(2px);
+	}
+}
+
+.logo {
+	height: 94px;
+}
+
+.menu {
+	background: transparent;
+	outline: none;
+}
+
+.menuRow {
+	$width: 30px;
+	$height: 3px;
+	
+	display: block;
+	width: $width;
+	height: $height;
+	background: #3a3a3a;
+	border-radius: $height / 2;
+	
+	& + & {
+		margin-top: 5px;
+	}
+}
