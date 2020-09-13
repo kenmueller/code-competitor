@@ -1,7 +1,11 @@
 .root {
 	display: flex;
+	position: absolute;
 	justify-content: space-between;
 	align-items: center;
+	top: 0;
+	right: 0;
+	left: 0;
 	padding: 24px 145px;
 }
 
