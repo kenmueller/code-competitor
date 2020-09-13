@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Navbar from 'components/Navbar'
+import Header from 'components/Header'
 
 const Home = () => (
 	<>
@@ -8,6 +9,7 @@ const Home = () => (
 			<title key="title">Code Competitor</title>
 		</Head>
 		<Navbar />
+		<Header />
 	</>
 )
 
