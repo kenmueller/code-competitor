@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Info from 'components/Info'
+import Description from 'components/Description'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
@@ -14,6 +15,7 @@ const Home = () => (
 		<Navbar />
 		<Header />
 		<Info />
+		<Description />
 		<Subscribe />
 		<Footer />
 	</>
