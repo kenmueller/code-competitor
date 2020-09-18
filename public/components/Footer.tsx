@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { Svg } from 'react-optimized-image'
+
+import phone from 'images/icons/phone.svg'
+import mail from 'images/icons/mail.svg'
 
 import styles from 'styles/components/Footer.module.scss'
 
@@ -8,11 +10,11 @@ const Footer = () => (
 	<footer className={styles.root}>
 		<div className={styles.contactLinks}>
 			<a className={styles.contactLink} href="tel:4242186497">
-				<FontAwesomeIcon className={styles.contactLinkIcon} icon={faPhone} />
+				<Svg className={styles.contactLinkIcon} src={phone} />
 				(424) 218-6497
 			</a>
 			<a className={styles.contactLink} href="mailto:learn@codecompetitor.com">
-				<FontAwesomeIcon className={styles.contactLinkIcon} icon={faEnvelope} />
+				<Svg className={styles.contactLinkIcon} src={mail} />
 				learn@codecompetitor.com
 			</a>
 		</div>
