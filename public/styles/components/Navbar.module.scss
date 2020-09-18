@@ -28,17 +28,6 @@
 	outline: none;
 }
 
-.menuRow {
-	$width: 30px;
-	$height: 3px;
-	
-	display: block;
-	width: $width;
-	height: $height;
-	background: #3a3a3a;
-	border-radius: $height / 2;
-	
-	& + & {
-		margin-top: 5px;
-	}
+.menuIcon {
+	height: 20px;
 }

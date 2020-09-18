@@ -1,4 +1,7 @@
 import Link from 'next/link'
+import Img, { Svg } from 'react-optimized-image'
+
+import menu from 'images/icons/hamburger.svg'
 
 import styles from 'styles/components/Navbar.module.scss'
 
@@ -6,33 +9,22 @@ export interface NavbarProps {
 	light?: boolean
 }
 
-const Navbar = ({ light = false }: NavbarProps) => {
-	const logoPrefix = light ? 'white' : 'blue'
-	
-	return (
-		<nav className={styles.root}>
-			<Link href="/">
-				<a>
-					<picture>
-						<source
-							srcSet={require(`images/${logoPrefix}-logo.png?webp`)}
-							type="image/webp"
-						/>
-						<img
-							className={styles.logo}
-							src={require(`images/${logoPrefix}-logo.png`)}
-							alt="Logo"
-						/>
-					</picture>
-				</a>
-			</Link>
-			<button className={styles.menu}>
-				<span className={styles.menuRow} />
-				<span className={styles.menuRow} />
-				<span className={styles.menuRow} />
-			</button>
-		</nav>
-	)
-}
+const Navbar = ({ light = false }: NavbarProps) => (
+	<nav className={styles.root}>
+		<Link href="/">
+			<a>
+				<Img
+					className={styles.logo}
+					src={require(`images/${light ? 'white' : 'blue'}-logo.png`)}
+					alt="Logo"
+					webp
+				/>
+			</a>
+		</Link>
+		<button className={styles.menu}>
+			<Svg className={styles.menuIcon} src={menu} />
+		</button>
+	</nav>
+)
 
 export default Navbar
