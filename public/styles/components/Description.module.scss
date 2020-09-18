@@ -5,10 +5,11 @@
 	
 	display: flex;
 	height: 570px;
+	background: url('../../images/description.png') right no-repeat;
+	background-size: contain;
 }
 
-.text {
-	flex-grow: 1;
+.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -17,15 +18,35 @@
 	background: #1486e7;
 }
 
+.content {
+	position: relative;
+	max-width: 400px;
+}
+
 .description {
-	max-width: 800px;
 	font-size: 24px;
 	line-height: 32px;
 	color: white;
 }
 
+.popUp {
+	position: absolute;
+	width: max-content;
+	padding: 45px 135px;
+	right: 0;
+	bottom: 100px;
+	background: white;
+	border-radius: 12px;
+	transform: translate(100%, 100%);
+}
+
+.popUpText {
+	font-size: 22px;
+	line-height: 38px;
+	color: #111;
+}
+
 .faq {
-	max-width: max-content;
 	margin-top: 24px;
 	padding: 12px 18px;
 	font-size: 18px;
