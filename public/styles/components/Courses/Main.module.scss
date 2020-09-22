@@ -1,0 +1,11 @@
+.root {
+	padding: 50px 0;
+}
+
+.filters {
+	display: grid;
+	grid: 1fr / repeat(5, 1fr);
+	gap: 16px;
+	max-width: 1000px;
+	margin: 0 auto;
+}
