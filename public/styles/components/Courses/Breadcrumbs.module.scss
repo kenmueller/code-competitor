@@ -1,0 +1,30 @@
+.root {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 16px 0;
+	background: transparentize(#1486e7, 0.9);
+}
+
+.link {
+	text-decoration: none;
+	color: #1486e7;
+	transition: transform 0.3s;
+	
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+	
+	&:active {
+		transform: translateY(2px);
+	}
+}
+
+.divider {
+	margin: 0 12px;
+}
+
+.this {
+	color: transparentize(#333, 0.5);
+}
