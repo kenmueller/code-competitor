@@ -1,4 +1,8 @@
+@use '../../dots';
+
 .root {
+	@include dots.left;
+	
 	padding: 150px 60px 95px;
 	text-align: center;
 	background: #1486e7;
@@ -15,6 +19,7 @@
 	max-width: 768px;
 	margin: 32px auto 0;
 	font-size: 18px;
+	font-weight: bold;
 	line-height: 26px;
 	color: white;
 	opacity: 0.9;
