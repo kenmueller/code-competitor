@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Navbar from 'components/Navbar'
 import Header from 'components/Courses/Header'
+import Breadcrumbs from 'components/Courses/Breadcrumbs'
 
 const Courses = () => (
 	<>
@@ -10,6 +11,7 @@ const Courses = () => (
 		</Head>
 		<Navbar light />
 		<Header />
+		<Breadcrumbs />
 	</>
 )
 
