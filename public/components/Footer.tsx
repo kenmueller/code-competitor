@@ -6,6 +6,12 @@ import mail from 'images/icons/mail.svg'
 
 import styles from 'styles/components/Footer.module.scss'
 
+const FooterNavigationLink = ({ title, href }: { title: string, href: string }) => (
+	<Link href={href}>
+		<a className={styles.navigationLink}>{title}</a>
+	</Link>
+)
+
 const Footer = () => (
 	<footer className={styles.root}>
 		<div className={styles.contactLinks}>
@@ -22,24 +28,12 @@ const Footer = () => (
 			&copy; Code Competitor 2020. All rights reserved.
 		</p>
 		<nav className={styles.navigation}>
-			<Link href="/courses">
-				<a className={styles.navigationLink}>Courses</a>
-			</Link>
-			<Link href="/competitions">
-				<a className={styles.navigationLink}>Competitions</a>
-			</Link>
-			<Link href="/about">
-				<a className={styles.navigationLink}>About</a>
-			</Link>
-			<Link href="/faq">
-				<a className={styles.navigationLink}>FAQ</a>
-			</Link>
-			<Link href="/jobs">
-				<a className={styles.navigationLink}>Jobs</a>
-			</Link>
-			<Link href="/terms">
-				<a className={styles.navigationLink}>Terms</a>
-			</Link>
+			<FooterNavigationLink title="Courses" href="/courses" />
+			<FooterNavigationLink title="Competitions" href="/competitions" />
+			<FooterNavigationLink title="About" href="/about" />
+			<FooterNavigationLink title="FAQ" href="/faq" />
+			<FooterNavigationLink title="Jobs" href="/jobs" />
+			<FooterNavigationLink title="Terms" href="/terms" />
 		</nav>
 	</footer>
 )
