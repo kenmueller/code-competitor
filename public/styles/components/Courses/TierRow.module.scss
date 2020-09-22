@@ -1,0 +1,15 @@
+@mixin color($color, $background) {
+	--tier-color: #{$color};
+	--tier-background: #{$background};
+}
+
+.bronze { @include color(#d47e12, transparentize(#f7e5cf, 0.6)); }
+.silver { @include color(#98abb4, transparentize(#98abb4, 0.86)); }
+.gold { @include color(#f3b500, #fef7e4); }
+.platinum { @include color(#4d6a82, #e7f0f6); }
+
+.root {
+	& + & {
+		margin-top: 16px;
+	}
+}
