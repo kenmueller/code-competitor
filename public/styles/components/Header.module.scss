@@ -6,23 +6,59 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 800px;
-	padding: 0 145px;
+	height: 600px;
+	padding: 0 35px;
 	color: #333;
 	background:
 		linear-gradient(to right, transparentize(white, 0.12), transparent),
 		url('../../images/header.png') center no-repeat;
 	background-size: cover;
+	
+	@media (min-width: 500px) {
+		height: 650px;
+	}
+	
+	@media (min-width: 550px) {
+		padding: 0 65px;
+	}
+	
+	@media (min-width: 600px) {
+		height: 700px;
+	}
+	
+	@media (min-width: 800px) {
+		height: 800px;
+	}
+	
+	@media (min-width: 1000px) {
+		padding: 0 145px;
+	}
 }
 
 .title {
-	font-size: 52px;
+	font-size: 32px;
 	font-weight: 900;
+	
+	@media (min-width: 600px) {
+		font-size: 42px;
+	}
+	
+	@media (min-width: 700px) {
+		font-size: 52px;
+	}
 }
 
 .subtitle {
 	margin: 12px 0 36px;
-	font-size: 22px;
+	font-size: 16px;
+	
+	@media (min-width: 500px) {
+		font-size: 18px;
+	}
+	
+	@media (min-width: 640px) {
+		font-size: 22px;
+	}
 }
 
 .navigation {
@@ -41,13 +77,17 @@
 }
 
 .navigationLink {
-	padding: 10px 22px;
+	padding: 10px 12px;
 	text-decoration: none;
 	font-size: 18px;
 	font-weight: 900;
 	color: white;
 	border-radius: 8px;
 	transition: color 0.3s, background 0.3s, transform 0.3s;
+	
+	@media (min-width: 500px) {
+		padding: 10px 22px;
+	}
 	
 	&:active {
 		transform: translateY(2px);
