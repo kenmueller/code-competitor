@@ -6,8 +6,16 @@
 	top: 0;
 	right: 0;
 	left: 0;
-	padding: 24px 145px;
+	padding: 24px 35px;
 	z-index: 10;
+	
+	@media (min-width: 550px) {
+		padding: 24px 65px;
+	}
+	
+	@media (min-width: 1000px) {
+		padding: 24px 145px;
+	}
 }
 
 .logo,
