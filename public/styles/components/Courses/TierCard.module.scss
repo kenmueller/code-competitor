@@ -1,0 +1,39 @@
+$color: var(--tier-color);
+$background: var(--tier-background);
+
+.root {
+	width: 280px;
+	padding: 32px 24px;
+	text-align: center;
+	background: $background;
+	border-radius: 12px;
+}
+
+.icon,
+.title {
+	color: $color;
+}
+
+.title {
+	margin-top: 6px;
+	font-size: 28px;
+	font-weight: 900;
+	line-height: 26px;
+}
+
+.ages,
+.description {
+	font-size: 15px;
+	color: #555;
+}
+
+.ages {
+	margin-top: 10px;
+	font-weight: bold;
+	line-height: 26px;
+}
+
+.description {
+	margin-top: 16px;
+	line-height: 23px;
+}
