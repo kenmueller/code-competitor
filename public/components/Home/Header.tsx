@@ -3,7 +3,7 @@ import cx from 'classnames'
 
 import styles from 'styles/components/Header.module.scss'
 
-const Header = () => (
+const HomeHeader = () => (
 	<header className={styles.root}>
 		<h1 className={styles.title}>
 			From 0 to Competitive
@@ -27,4 +27,4 @@ const Header = () => (
 	</header>
 )
 
-export default Header
+export default HomeHeader

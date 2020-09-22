@@ -4,7 +4,7 @@ import owl from 'images/icons/owl.svg'
 
 import styles from 'styles/components/Description.module.scss'
 
-const Description = () => (
+const HomeDescription = () => (
 	<section className={styles.root}>
 		<article className={styles.container}>
 			<div className={styles.content}>
@@ -27,4 +27,4 @@ const Description = () => (
 	</section>
 )
 
-export default Description
+export default HomeDescription
