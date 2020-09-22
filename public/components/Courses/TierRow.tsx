@@ -2,7 +2,8 @@ import cx from 'classnames'
 
 import tiers from 'data/tiers.json'
 import TierName from 'models/TierName'
-import TierCard from './TierCard'
+import TierTitleCard from './TierTitleCard'
+import TierCourseCard from './TierCourseCard'
 
 import styles from 'styles/components/Courses/TierRow.module.scss'
 
@@ -15,11 +16,14 @@ const CoursesTierRow = ({ tier: tierName }: CoursesTierRowProps) => {
 	
 	return (
 		<div className={cx(styles.root, styles[tierName])}>
-			<TierCard tier={tier} />
+			<TierTitleCard className={styles.card} tier={tier} />
 			{tier.courses.map(course => (
-				<article key={course.slug} className={styles.cell}>
-					
-				</article>
+				<TierCourseCard
+					key={course.slug}
+					className={styles.card}
+					tier={tier}
+					course={course}
+				/>
 			))}
 		</div>
 	)

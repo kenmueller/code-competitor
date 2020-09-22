@@ -1,3 +1,5 @@
+$spacing: 16px;
+
 @mixin color($color, $background) {
 	--tier-color: #{$color};
 	--tier-background: #{$background};
@@ -9,7 +11,17 @@
 .platinum { @include color(#4d6a82, #e7f0f6); }
 
 .root {
+	display: flex;
+	
 	& + & {
-		margin-top: 16px;
+		margin-top: $spacing;
+	}
+}
+
+.card {
+	width: 280px;
+	
+	& + & {
+		margin-left: $spacing;
 	}
 }
