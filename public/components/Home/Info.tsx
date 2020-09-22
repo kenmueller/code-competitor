@@ -4,7 +4,7 @@ import cx from 'classnames'
 import trophy from 'images/icons/trophy.svg'
 import strength from 'images/icons/strength.svg'
 
-import styles from 'styles/components/Info.module.scss'
+import styles from 'styles/components/Home/Info.module.scss'
 
 const HomeInfo = () => (
 	<section className={styles.root}>

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import cx from 'classnames'
 
-import styles from 'styles/components/Header.module.scss'
+import styles from 'styles/components/Home/Header.module.scss'
 
 const HomeHeader = () => (
 	<header className={styles.root}>

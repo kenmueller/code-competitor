@@ -2,7 +2,7 @@ import { Svg } from 'react-optimized-image'
 
 import owl from 'images/icons/owl.svg'
 
-import styles from 'styles/components/Description.module.scss'
+import styles from 'styles/components/Home/Description.module.scss'
 
 const HomeDescription = () => (
 	<section className={styles.root}>

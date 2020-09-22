@@ -1,4 +1,4 @@
-@use '../dots';
+@use '../../dots';
 
 .root {
 	@include dots.right;
@@ -11,7 +11,7 @@
 	color: #333;
 	background:
 		linear-gradient(to right, transparentize(white, 0.12), transparent),
-		url('../../images/header.png') center no-repeat;
+		url('../../../images/header.png') center no-repeat;
 	background-size: cover;
 	
 	@media (min-width: 500px) {
