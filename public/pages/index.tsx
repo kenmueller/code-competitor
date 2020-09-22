@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 import Navbar from 'components/Navbar'
-import Header from 'components/Header'
-import Info from 'components/Info'
-import Description from 'components/Description'
+import Header from 'components/Home/Header'
+import Info from 'components/Home/Info'
+import Description from 'components/Home/Description'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
