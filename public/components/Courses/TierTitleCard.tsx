@@ -1,16 +1,18 @@
 import { Svg } from 'react-optimized-image'
+import cx from 'classnames'
 
 import Tier from 'models/Tier'
 import medal from 'images/icons/medal.svg'
 
-import styles from 'styles/components/Courses/TierCard.module.scss'
+import styles from 'styles/components/Courses/TierTitleCard.module.scss'
 
 export interface CoursesTierCardProps {
+	className?: string
 	tier: Tier
 }
 
-const CoursesTierCard = ({ tier }: CoursesTierCardProps) => (
-	<article className={styles.root}>
+const CoursesTierTitleCard = ({ className, tier }: CoursesTierCardProps) => (
+	<article className={cx(styles.root, className)}>
 		<Svg className={styles.icon} src={medal} />
 		<p className={styles.title}>{tier.title}</p>
 		<p className={styles.ages}>
@@ -22,4 +24,4 @@ const CoursesTierCard = ({ tier }: CoursesTierCardProps) => (
 	</article>
 )
 
-export default CoursesTierCard
+export default CoursesTierTitleCard

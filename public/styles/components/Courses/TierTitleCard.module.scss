@@ -1,17 +1,13 @@
-$color: var(--tier-color);
-$background: var(--tier-background);
-
 .root {
-	width: 280px;
 	padding: 32px 24px;
 	text-align: center;
-	background: $background;
+	background: var(--tier-background);
 	border-radius: 12px;
 }
 
 .icon,
 .title {
-	color: $color;
+	color: var(--tier-color);
 }
 
 .title {
