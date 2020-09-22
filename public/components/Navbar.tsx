@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Img, { Svg } from 'react-optimized-image'
+import cx from 'classnames'
 
 import menu from 'images/icons/hamburger.svg'
 
@@ -22,7 +23,10 @@ const Navbar = ({ light = false }: NavbarProps) => (
 			</a>
 		</Link>
 		<button className={styles.menu}>
-			<Svg className={styles.menuIcon} src={menu} />
+			<Svg
+				className={cx(styles.menuIcon, { [styles.lightMenuIcon]: light })}
+				src={menu}
+			/>
 		</button>
 	</nav>
 )
