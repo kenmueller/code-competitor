@@ -1,6 +1,5 @@
 {
 	"bronze": {
-		"color": "#d47e12",
 		"title": "Bronze",
 		"description": "For students who have recently learned to program, but who have no training in algorithms beyond basic concepts like sorting and binary search.",
 		"ages": { "min": 12, "max": 18 },
@@ -26,7 +25,6 @@
 		]
 	},
 	"silver": {
-		"color": "#98abb4",
 		"title": "Silver",
 		"description": "For students who are beginning to learn fundamental problem-solving techniques (e.g., recursive search, greedy algorithms) and fundamental data structures.",
 		"ages": { "min": 13, "max": 18 },
@@ -52,7 +50,6 @@
 		]
 	},
 	"gold": {
-		"color": "#f3b500",
 		"title": "Gold",
 		"description": "Where students encounter more standard algorithms of a more complex nature (e.g., shortest paths, dynamic programming) and more advanced data structures.",
 		"ages": { "min": 14, "max": 19 },
@@ -78,7 +75,6 @@
 		]
 	},
 	"platinum": {
-		"color": "#4d6a82",
 		"title": "Platinum",
 		"description": "For advanced students who are well grounded in algorithmic problem-solving techniques, who wish to challenge themselves with sophisticated and more open-ended problems.",
 		"ages": { "min": 16, "max": 19 },
