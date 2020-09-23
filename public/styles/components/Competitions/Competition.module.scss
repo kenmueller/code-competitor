@@ -1,0 +1,21 @@
+.root {
+	max-width: 800px;
+	margin: 0 auto;
+	
+	& + & {
+		margin-top: 60px;
+	}
+}
+
+.title {
+	font-size: 32px;
+	font-weight: 900;
+	color: #1486e7;
+}
+
+.description {
+	margin: 20px 0;
+	font-size: 20px;
+	line-height: 32px;
+	color: #555;
+}
