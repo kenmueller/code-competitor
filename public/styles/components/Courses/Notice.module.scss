@@ -1,0 +1,22 @@
+.root {
+	padding: 0 30px;
+}
+
+.text {
+	max-width: 800px;
+	margin: 0 auto 100px;
+	padding: 30px;
+	text-align: center;
+	border: 3px solid #f2f2f2;
+	border-radius: 12px;
+}
+
+.link {
+	display: inline-block;
+	color: #1486e7;
+	transition: transform 0.3s;
+	
+	&:active {
+		transform: translateY(2px);
+	}
+}
