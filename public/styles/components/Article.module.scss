@@ -15,6 +15,7 @@
 		display: block;
 	}
 	
+	a,
 	h1,
 	h2,
 	h3,
@@ -22,6 +23,15 @@
 	h5,
 	h6 {
 		color: #1486e7;
+	}
+	
+	a {
+		transition: opacity 0.3s;
+		
+		&:hover,
+		&:focus {
+			opacity: 0.7;
+		}
 	}
 	
 	li,
@@ -39,10 +49,6 @@
 	
 	li:not(:first-child) {
 		margin-top: 0.25em;
-	}
-	
-	a {
-		color: #b2ccd6;
 	}
 	
 	blockquote {
