@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
 import Navbar from '../Navbar'
-import Header from './Header'
-import Breadcrumbs from './Breadcrumbs'
+import Header from '../Header'
+import Breadcrumbs from '../Breadcrumbs'
 import Main from './Main'
 import Notice from './Notice'
 import Subscribe from '../Subscribe'
@@ -16,8 +16,17 @@ const Courses = () => (
 			</title>
 		</Head>
 		<Navbar light />
-		<Header />
-		<Breadcrumbs />
+		<Header title="Courses">
+			"In an application where we are processing millions of objects,
+			it is not unusual to be able to make a program millions of times
+			faster by using a well-designed algorithm."
+			<br /><br />
+			- Algorithms, by Sedgewick and Wayne
+		</Header>
+		<Breadcrumbs
+			trail={[{ url: '/', title: 'Home' }]}
+			title="Courses"
+		/>
 		<Main />
 		<Notice />
 		<Subscribe />
