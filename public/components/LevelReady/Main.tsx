@@ -10,6 +10,14 @@ const LevelReadyMain = () => {
 	
 	return (
 		<main className={styles.root}>
+			<p className={styles.notice}>
+				Submit C++ code to <a
+					className={styles.link}
+					href="mailto:learn@codecompetitor.com"
+				>
+					learn@codecompetitor.com
+				</a> for feedback
+			</p>
 			<Article className={styles.article}>
 				<Content />
 			</Article>
