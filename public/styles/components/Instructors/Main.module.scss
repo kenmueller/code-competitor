@@ -1,0 +1,21 @@
+@use '../../dots';
+
+$horizontal-padding: 60px;
+$max-columns: 4;
+$card-width: 300px;
+$gap: 16px;
+
+.root {
+	@include dots.right;
+	
+	display: grid;
+	grid: none / repeat(auto-fill, $card-width);
+	gap: $gap;
+	justify-content: center;
+	max-width:
+		$horizontal-padding * 2 +
+		$card-width * $max-columns +
+		$gap * ($max-columns - 1);
+	margin: 0 auto;
+	padding: 100px $horizontal-padding 120px;
+}
