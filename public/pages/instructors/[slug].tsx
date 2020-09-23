@@ -7,6 +7,9 @@ import Instructor from 'models/Instructor'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
+import Main from 'components/InstructorProfile/Main'
+import Subscribe from 'components/Subscribe'
+import Footer from 'components/Footer'
 
 export interface InstructorProfileProps {
 	user: Instructor
@@ -28,6 +31,9 @@ const InstructorProfile = ({ user }: InstructorProfileProps) => (
 			]}
 			title={user.name}
 		/>
+		<Main user={user} />
+		<Subscribe />
+		<Footer />
 	</>
 )
 
