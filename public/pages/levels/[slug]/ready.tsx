@@ -18,7 +18,7 @@ const LevelReady = ({ name }: LevelReadyProps) => (
 	<>
 		<Head>
 			<title key="title">
-				Are you ready for {name}?
+				Are you ready for {name}? - Code Competitor
 			</title>
 		</Head>
 		<Navbar light />
