@@ -18,23 +18,25 @@ const InstructorProfileMain = ({ user }: InstructorProfileMainProps) => {
 	return (
 		<main className={styles.root}>
 			<aside className={styles.aside}>
-				<Img
-					className={styles.image}
-					src={require(`images/instructors/${slug}.jpg`)}
-					alt={user.name}
-					webp
-				/>
+				<div className={styles.imageContainer}>
+					<Img
+						className={styles.image}
+						src={require(`images/instructors/${slug}.jpg`)}
+						alt={user.name}
+						webp
+					/>
+				</div>
 				<label className={styles.contactLabel}>
 					Get in touch
 				</label>
 				<div className={styles.contactLinks}>
-					<a href="#">
+					<a className={styles.contactLink} href="#">
 						<Svg src={facebook} />
 					</a>
-					<a href="#">
+					<a className={styles.contactLink} href="#">
 						<Svg src={twitter} />
 					</a>
-					<a href="#">
+					<a className={styles.contactLink} href="#">
 						<Svg src={instagram} />
 					</a>
 				</div>
