@@ -4,6 +4,8 @@ import Navbar from 'components/Navbar'
 import Header from 'components/Courses/Header'
 import Breadcrumbs from 'components/Courses/Breadcrumbs'
 import Main from 'components/Courses/Main'
+import Subscribe from 'components/Subscribe'
+import Footer from 'components/Footer'
 
 const Courses = () => (
 	<>
@@ -14,6 +16,8 @@ const Courses = () => (
 		<Header />
 		<Breadcrumbs />
 		<Main />
+		<Subscribe />
+		<Footer />
 	</>
 )
 
