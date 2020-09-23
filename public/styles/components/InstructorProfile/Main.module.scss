@@ -1,7 +1,5 @@
 @use '../../dots';
 
-$image-dimension: 215px;
-
 .root {
 	@include dots.right;
 	
@@ -29,8 +27,10 @@ $image-dimension: 215px;
 }
 
 .image {
-	width: $image-dimension;
-	height: $image-dimension;
+	$dimension: 215px;
+	
+	width: $dimension;
+	height: $dimension;
 	object-fit: cover;
 	border-radius: 50%;
 }
