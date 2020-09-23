@@ -1,0 +1,12 @@
+@use '../../dots';
+
+.root {
+	@include dots.right;
+	
+	padding: 60px 60px 120px;
+}
+
+.article {
+	max-width: 800px;
+	margin: 0 auto;
+}
