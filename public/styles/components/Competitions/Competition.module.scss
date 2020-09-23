@@ -1,3 +1,5 @@
+$padding: 30px;
+
 .root {
 	max-width: 800px;
 	margin: 0 auto;
@@ -18,4 +20,67 @@
 	font-size: 20px;
 	line-height: 32px;
 	color: #555;
+}
+
+.table {
+	width: 100%;
+	border: 3px solid #f2f2f2;
+	border-spacing: 0;
+	border-radius: 12px;
+}
+
+.labels {
+	background: #f2f2f2;
+}
+
+.label,
+.value {
+	&:first-child {
+		padding-left: $padding;
+	}
+	
+	&:last-child {
+		padding-right: $padding;
+		text-align: right;
+	}
+}
+
+.label {
+	padding: 16px 0;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #636363;
+}
+
+.row:nth-child(even) {
+	background: #ebf5fd;
+}
+
+.value {
+	padding: $padding 0;
+	color: #555;
+}
+
+.link {
+	display: inline-block;
+	padding: 8px 16px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #1486e7;
+	background: white;
+	border: 1px solid #d8ebfb;
+	border-radius: 6px;
+	transition: color 0.3s, background 0.3s, border-color 0.3s, transform 0.3s;
+	
+	&:hover,
+	&:active {
+		color: white;
+		background: #1486e7;
+		border-color: #1486e7;
+	}
+	
+	&:active {
+		transform: translateY(2px);
+	}
 }
