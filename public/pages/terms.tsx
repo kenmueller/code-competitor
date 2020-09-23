@@ -7,7 +7,7 @@ import Main from 'components/Terms/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const FAQ = () => (
+const Terms = () => (
 	<>
 		<Head>
 			<title key="title">
@@ -26,4 +26,4 @@ const FAQ = () => (
 	</>
 )
 
-export default FAQ
+export default Terms
