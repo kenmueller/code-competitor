@@ -1,0 +1,82 @@
+@use '../../dots';
+
+.root {
+	@include dots.right;
+	
+	display: flex;
+	justify-content: center;
+	padding: 100px 60px 160px;
+}
+
+.image {
+	$dimension: 215px;
+	
+	width: $dimension;
+	height: $dimension;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.aside {
+	// display: flex;
+	// flex-di
+}
+
+.contactLabel {
+	display: block;
+	text-align: center;
+}
+
+.main {
+	max-width: 600px;
+}
+
+.name {
+	font-size: 32px;
+	color: #1486e7;
+}
+
+.bio {
+	margin: 20px 0;
+	font-size: 20px;
+	line-height: 32px;
+	color: #555;
+}
+
+.infoContainer {
+	padding: 30px;
+	background: transparentize(#1486e7, 0.9);
+	border-radius: 12px;
+}
+
+.info {
+	padding: 20px 16px;
+	background: white;
+	border-radius: 12px;
+}
+
+.infoRow {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	& + & {
+		$spacing: 16px;
+		
+		margin-top: $spacing;
+		padding-top: $spacing;
+		border-top: 1px solid transparentize(#1486e7, 0.76);
+	}
+}
+
+.infoKey {
+	margin-right: 8px;
+	text-transform: uppercase;
+	font-size: 13px;
+	color: #949494;
+}
+
+.infoValue {
+	font-size: 15px;
+	color: #555;
+}
