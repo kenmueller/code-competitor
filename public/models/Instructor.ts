@@ -8,3 +8,8 @@ export default interface Instructor {
 	pastEmployers: string
 	hobbies: string
 }
+
+export interface BasicInstructor {
+	slug: string
+	name: string
+}
