@@ -19,9 +19,24 @@ $color: var(--tier-color);
 
 .info {
 	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
 	padding: 24px;
 	background: white;
 	border-radius: 12px;
+}
+
+.rows {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .key {
@@ -31,13 +46,19 @@ $color: var(--tier-color);
 }
 
 .value {
-	text-align: right;
 	font-size: 15px;
 	color: #555;
 }
 
+.divider {
+	height: 1px;
+	background: $color;
+	opacity: 0.24;
+}
+
 .link {
 	display: block;
+	margin-top: 24px;
 	padding: 7px 0;
 	text-align: center;
 	text-decoration: none;

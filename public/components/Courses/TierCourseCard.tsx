@@ -15,22 +15,22 @@ const TierCourseCard = ({ className, tier, course }: TierCourseCardProps) => (
 	<article className={cx(styles.root, className)}>
 		<p className={styles.name}>{course.name}</p>
 		<div className={styles.info}>
-			<table className={styles.table}>
-				<tbody>
-					<tr className={styles.tableRow}>
-						<td className={styles.key}>Usaco level</td>
-						<td className={styles.value}>{tier.title}</td>
-					</tr>
-					<tr className={styles.tableRow}>
-						<td className={styles.key}>Ages</td>
-						<td className={styles.value}>{course.ages.min}-{course.ages.max}</td>
-					</tr>
-					<tr className={styles.tableRow}>
-						<td className={styles.key}>Book required</td>
-						<td className={styles.value}>{course.book ? 'Yes' : 'No'}</td>
-					</tr>
-				</tbody>
-			</table>
+			<div className={styles.rows}>
+				<p className={styles.row}>
+					<span className={styles.key}>Usaco level</span>
+					<span className={styles.value}>{tier.title}</span>
+				</p>
+				<hr className={styles.divider} />
+				<p className={styles.row}>
+					<span className={styles.key}>Ages</span>
+					<span className={styles.value}>{course.ages.min}-{course.ages.max}</span>
+				</p>
+				<hr className={styles.divider} />
+				<p className={styles.row}>
+					<span className={styles.key}>Book required</span>
+					<span className={styles.value}>{course.book ? 'Yes' : 'No'}</span>
+				</p>
+			</div>
 			<Link href="/courses/[slug]" as={`/courses/${course.slug}`}>
 				<a className={styles.link}>Learn more</a>
 			</Link>
