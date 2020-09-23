@@ -31,7 +31,7 @@ const TierCourseCard = ({ className, tier, course }: TierCourseCardProps) => (
 					<span className={styles.value}>{course.book ? 'Yes' : 'No'}</span>
 				</p>
 			</div>
-			<Link href="/courses/[slug]" as={`/courses/${course.slug}`}>
+			<Link href="/levels/[slug]" as={`/levels/${course.slug}`}>
 				<a className={styles.link}>Learn more</a>
 			</Link>
 		</div>
