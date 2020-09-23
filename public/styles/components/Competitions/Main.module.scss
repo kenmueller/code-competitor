@@ -1,0 +1,7 @@
+@use '../../dots';
+
+.root {
+	@include dots.right;
+	
+	padding: 60px 60px 120px;
+}
