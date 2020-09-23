@@ -18,7 +18,7 @@ const HomeHeader = () => (
 					Start with Basics
 				</a>
 			</Link>
-			<Link href="/">
+			<Link href="/courses">
 				<a className={cx(styles.navigationLink, styles.catalogNavigationLink)}>
 					Course Catalog
 				</a>
