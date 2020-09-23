@@ -6,6 +6,7 @@ import { join } from 'path'
 import Instructor from 'models/Instructor'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
+import Breadcrumbs from 'components/Breadcrumbs'
 
 export interface InstructorProfileProps {
 	user: Instructor
@@ -20,6 +21,13 @@ const InstructorProfile = ({ user }: InstructorProfileProps) => (
 		</Head>
 		<Navbar light />
 		<Header title="Instructor Profile" />
+		<Breadcrumbs
+			trail={[
+				{ url: '/', title: 'Home' },
+				{ url: '/instructors', title: 'Instructors' }
+			]}
+			title={user.name}
+		/>
 	</>
 )
 
