@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
+import Main from 'components/FAQ/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
@@ -19,6 +20,7 @@ const FAQ = () => (
 			trail={[{ url: '/', title: 'Home' }]}
 			title="FAQ"
 		/>
+		<Main />
 		<Subscribe />
 		<Footer />
 	</>
