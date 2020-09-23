@@ -52,8 +52,10 @@
 
 .faq {
 	display: block;
+	max-width: max-content;
 	margin: 24px auto 0;
 	padding: 12px 18px;
+	text-decoration: none;
 	font-size: 18px;
 	font-weight: 900;
 	color: #1486e7;

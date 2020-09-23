@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Svg } from 'react-optimized-image'
 
 import owl from 'images/icons/owl.svg'
@@ -11,9 +12,11 @@ const HomeDescription = () => (
 				<p className={styles.description}>
 					Middle/high school online classes using video-conferencing and screen-sharing for a safe and instructive environment
 				</p>
-				<button className={styles.faq}>
-					Frequently Asked Questions (FAQ)
-				</button>
+				<Link href="/faq">
+					<a className={styles.faq}>
+						Frequently Asked Questions (FAQ)
+					</a>
+				</Link>
 				<aside className={styles.popUp}>
 					<Svg className={styles.popUpIcon} src={owl} />
 					<p className={styles.popUpText}>
