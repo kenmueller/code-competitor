@@ -4,6 +4,7 @@ import Navbar from 'components/Navbar'
 import Header from 'components/Home/Header'
 import Info from 'components/Home/Info'
 import Description from 'components/Home/Description'
+import Classes from 'components/Home/Classes'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
@@ -18,6 +19,7 @@ const Home = () => (
 		<Header />
 		<Info />
 		<Description />
+		<Classes />
 		<Subscribe />
 		<Footer />
 	</>
