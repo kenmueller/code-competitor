@@ -3,10 +3,9 @@ import Head from 'next/head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
-import Article from 'components/Article'
+import Main from 'components/About/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
-import Content from 'articles/about.mdx'
 
 const About = () => (
 	<>
@@ -21,9 +20,7 @@ const About = () => (
 			trail={[{ url: '/', title: 'Home' }]}
 			title="About Us"
 		/>
-		<Article>
-			<Content />
-		</Article>
+		<Main />
 		<Subscribe />
 		<Footer />
 	</>
