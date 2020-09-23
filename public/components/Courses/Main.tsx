@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 import tiers from 'data/tiers.json'
 import TierName, { TIER_NAMES } from 'models/TierName'
@@ -7,19 +7,19 @@ import TierRow from './TierRow'
 
 import styles from 'styles/components/Courses/Main.module.scss'
 
-export type Filter = null | TierName
+export type Filter = undefined | TierName
 
 const CoursesMain = () => {
-	const [filter, setFilter] = useState<Filter>(null)
+	const filter = useRouter().query.tier as Filter
 	
 	return (
 		<main className={styles.root}>
 			<div className={styles.filters}>
-				<FilterButton value={null} filter={filter} setFilter={setFilter}>
+				<FilterButton value={undefined} filter={filter}>
 					All
 				</FilterButton>
 				{TIER_NAMES.map(tier => (
-					<FilterButton key={tier} value={tier} filter={filter} setFilter={setFilter}>
+					<FilterButton key={tier} value={tier} filter={filter}>
 						{tiers[tier].title}
 					</FilterButton>
 				))}

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import Link from 'next/link'
 import cx from 'classnames'
 
 import { Filter } from './Main'
@@ -8,23 +8,19 @@ import styles from 'styles/components/Courses/FilterButton.module.scss'
 export interface CoursesFilterButtonProps {
 	value: Filter
 	filter: Filter
-	setFilter(filter: Filter): void
 	children: string
 }
 
-const CoursesFilterButton = ({ value, filter, setFilter, children }: CoursesFilterButtonProps) => {
-	const onClick = useCallback(() => {
-		setFilter(value)
-	}, [setFilter, value])
-	
-	return (
-		<button
-			className={cx(styles.root, { [styles.selected]: value === filter })}
-			onClick={onClick}
-		>
+const CoursesFilterButton = ({ value, filter, children }: CoursesFilterButtonProps) => (
+	<Link
+		href={`/courses${value ? '/[tier]' : ''}`}
+		as={`/courses${value ? `/${value}` : ''}`}
+		scroll={false}
+	>
+		<a className={cx(styles.root, { [styles.selected]: value === filter })}>
 			{children}
-		</button>
-	)
-}
+		</a>
+	</Link>
+)
 
 export default CoursesFilterButton
