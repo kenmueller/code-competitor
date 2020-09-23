@@ -11,7 +11,9 @@ import Footer from '../Footer'
 const Courses = () => (
 	<>
 		<Head>
-			<title key="title">Courses - Code Competitor</title>
+			<title key="title">
+				Courses - Code Competitor
+			</title>
 		</Head>
 		<Navbar light />
 		<Header />

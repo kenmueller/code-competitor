@@ -10,7 +10,9 @@ import Footer from 'components/Footer'
 const Home = () => (
 	<>
 		<Head>
-			<title key="title">Code Competitor</title>
+			<title key="title">
+				Code Competitor
+			</title>
 		</Head>
 		<Navbar />
 		<Header />
