@@ -1,0 +1,27 @@
+.root {
+	display: flex;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.article {
+	& + & {
+		margin-top: 50px;
+	}
+}
+
+.title {
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: 900;
+	color: #1486e7;
+}
+
+.articleContent {
+	color: #949494;
+}
+
+.aside {
+	flex-shrink: 0;
+	margin-left: 100px;
+}
