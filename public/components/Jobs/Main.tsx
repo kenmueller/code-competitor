@@ -23,14 +23,18 @@ const JobsMain = ({ categories }: JobsMainProps) => (
 			<h3 className={styles.title}>
 				Open positions
 			</h3>
-			<table>
+			<table className={styles.table}>
 				<tbody>
 					{categories.map(category => (
 						<Fragment key={category.slug}>
 							{category.jobs.map(job => (
-								<tr key={job.slug}>
-									<td>{job.name}</td>
-									<td><a href={`#${job.slug}`}>Learn more</a></td>
+								<tr key={job.slug} className={styles.row}>
+									<td className={styles.value}>{job.name}</td>
+									<td className={styles.value}>
+										<a className={styles.link} href={`#${job.slug}`}>
+											Learn more
+										</a>
+									</td>
 								</tr>
 							))}
 						</Fragment>
