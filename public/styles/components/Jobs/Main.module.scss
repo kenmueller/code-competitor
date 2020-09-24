@@ -1,6 +1,10 @@
+@use '../../dots';
+
 $padding: 30px;
 
 .root {
+	@include dots.right;
+	
 	padding: 100px 60px 120px;
 }
 
