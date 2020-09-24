@@ -8,6 +8,10 @@
 	border: none;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	overscroll-behavior: none;
 }
