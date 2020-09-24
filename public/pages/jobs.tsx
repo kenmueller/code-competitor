@@ -1,5 +1,10 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { readdirSync } from 'fs'
+import { join } from 'path'
 
+import { JobCategory } from 'models/Job'
+import normalize from 'lib/normalize'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
@@ -7,7 +12,11 @@ import Main from 'components/Jobs/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const Jobs = () => (
+export interface JobsProps {
+	categories: JobCategory[]
+}
+
+const Jobs = ({ categories }: JobsProps) => (
 	<>
 		<Head>
 			<title key="title">
@@ -20,10 +29,23 @@ const Jobs = () => (
 			trail={[{ url: '/', title: 'Home' }]}
 			title="Jobs"
 		/>
-		<Main />
+		<Main categories={categories} />
 		<Subscribe />
 		<Footer />
 	</>
 )
 
 export default Jobs
+
+export const getStaticProps: GetStaticProps = async () => ({
+	props: {
+		categories: readdirSync(join(process.cwd(), 'articles/jobs')).map(category => ({
+			slug: normalize(category),
+			name: category,
+			jobs: readdirSync(join(process.cwd(), `articles/jobs/${category}`)).map(job => ({
+				slug: normalize(job),
+				name: job
+			}))
+		}))
+	}
+})
