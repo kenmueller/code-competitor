@@ -38,9 +38,9 @@ export default InstructorProfile
 
 export const getStaticProps: GetStaticProps = async () => ({
 	props: {
-		users: readdirSync(join(process.cwd(), 'data/instructors')).map(path => ({
-			slug: path.replace(/\.json$/, ''),
-			name: require(`data/instructors/${path}`).name
+		users: readdirSync(join(process.cwd(), 'articles/instructors')).map(path => ({
+			slug: path.replace(/\.mdx$/, ''),
+			name: require(`articles/instructors/${path}`).meta.name
 		}))
 	}
 })

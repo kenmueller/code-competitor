@@ -1,3 +1,4 @@
+import { FC } from 'react'
 import { useRouter } from 'next/router'
 import Img, { Svg } from 'react-optimized-image'
 
@@ -7,13 +8,14 @@ import twitter from 'images/icons/twitter.svg'
 import instagram from 'images/icons/instagram.svg'
 
 import styles from 'styles/components/InstructorProfile/Main.module.scss'
+import Article from 'components/Article'
 
-export interface InstructorProfileMainProps {
-	user: Instructor
-}
-
-const InstructorProfileMain = ({ user }: InstructorProfileMainProps) => {
+const InstructorProfileMain = () => {
 	const slug = useRouter().query.slug as string
+	const { default: Bio, meta: user } = require(`articles/instructors/${slug}.mdx`) as {
+		default: FC
+		meta: Instructor
+	}
 	
 	return (
 		<main className={styles.root}>
@@ -43,7 +45,9 @@ const InstructorProfileMain = ({ user }: InstructorProfileMainProps) => {
 			</aside>
 			<article className={styles.main}>
 				<h1 className={styles.name}>{user.name}</h1>
-				<p className={styles.bio}>{user.bio}</p>
+				<Article className={styles.bio}>
+					<Bio />
+				</Article>
 				<div className={styles.infoContainer}>
 					<div className={styles.info}>
 						<div className={styles.infoRow}>
