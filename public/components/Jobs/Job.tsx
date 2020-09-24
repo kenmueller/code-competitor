@@ -36,6 +36,14 @@ const JobsJob = ({ category, job }: JobsJobProps) => {
 					</Article>
 				</div>
 			</div>
+			<p className={styles.notice}>
+				To apply, submit a brief statement to <a
+					className={styles.noticeLink}
+					href="mailto:learn@codecompetitor.com"
+				>
+					learn@codecompetitor.com
+				</a> detailing your interest, availability, and related experience
+			</p>
 		</article>
 	)
 }
