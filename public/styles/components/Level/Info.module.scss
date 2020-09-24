@@ -23,5 +23,31 @@
 
 .aside {
 	flex-shrink: 0;
+	width: 375px;
 	margin-left: 100px;
+}
+
+.gift {
+	padding: 32px;
+	text-align: center;
+	border: 3px solid #f2f2f2;
+	border-radius: 12px;
+}
+
+.giftMessage {
+	margin-top: 16px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 24px;
+	color: #949494;
+}
+
+.giftMessageLink {
+	color: #1486e7;
+	transition: opacity 0.3s;
+	
+	&:hover,
+	&:focus {
+		opacity: 0.7;
+	}
 }
