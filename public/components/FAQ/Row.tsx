@@ -2,17 +2,18 @@ import { useCallback, useState } from 'react'
 import { Svg } from 'react-optimized-image'
 import cx from 'classnames'
 
-import { Question } from './Main'
 import plus from 'images/icons/plus.svg'
 import minus from 'images/icons/minus.svg'
 
 import styles from 'styles/components/FAQ/Row.module.scss'
+import Article from 'components/Article'
 
 export interface FAQRowProps {
-	question: Question
+	question: string
 }
 
-const FAQRow = ({ question }: FAQRowProps) => {
+const FAQRow = ({ question: slug }: FAQRowProps) => {
+	const { default: Value, name } = require(`articles/faq/${slug}.mdx`)
 	const [isOpen, setIsOpen] = useState(false)
 	
 	const toggleIsOpen = useCallback(() => {
@@ -26,11 +27,11 @@ const FAQRow = ({ question }: FAQRowProps) => {
 					? <Svg className={styles.icon} src={minus} />
 					: <Svg className={styles.icon} src={plus} />
 				}
-				<p className={styles.key}>{question.key}</p>
+				<p className={styles.name}>{name}</p>
 			</button>
-			<p className={cx(styles.value, { [styles.open]: isOpen })}>
-				{question.value}
-			</p>
+			<Article className={cx(styles.value, { [styles.open]: isOpen })}>
+				<Value />
+			</Article>
 		</article>
 	)
 }

@@ -1,4 +1,7 @@
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import { readdirSync } from 'fs'
+import { join } from 'path'
 
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
@@ -7,7 +10,11 @@ import Main from 'components/FAQ/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const FAQ = () => (
+export interface FAQProps {
+	questions: string[]
+}
+
+const FAQ = ({ questions }: FAQProps) => (
 	<>
 		<Head>
 			<title key="title">
@@ -20,10 +27,17 @@ const FAQ = () => (
 			trail={[{ url: '/', title: 'Home' }]}
 			title="FAQ"
 		/>
-		<Main />
+		<Main questions={questions} />
 		<Subscribe />
 		<Footer />
 	</>
 )
 
 export default FAQ
+
+export const getStaticProps: GetStaticProps = async () => ({
+	props: {
+		questions: readdirSync(join(process.cwd(), 'articles/faq'))
+			.map(path => path.replace(/\.mdx$/, ''))
+	}
+})

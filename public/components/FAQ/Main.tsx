@@ -1,17 +1,15 @@
-import questions from 'data/faq.json'
 import Row from './Row'
 
 import styles from 'styles/components/FAQ/Main.module.scss'
 
-export interface Question {
-	key: string
-	value: string
+export interface FAQMainProps {
+	questions: string[]
 }
 
-const FAQMain = () => (
+const FAQMain = ({ questions }: FAQMainProps) => (
 	<main className={styles.root}>
-		{questions.map((question, i) => (
-			<Row key={i} question={question} />
+		{questions.map(question => (
+			<Row key={question} question={question} />
 		))}
 	</main>
 )
