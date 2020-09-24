@@ -9,7 +9,9 @@ export interface InstructorsMainProps {
 
 const InstructorsMain = ({ users }: InstructorsMainProps) => (
 	<main className={styles.root}>
-		{users.map(user => <Card key={user.slug} user={user} />)}
+		<div className={styles.cards}>
+			{users.map(user => <Card key={user.slug} user={user} />)}
+		</div>
 	</main>
 )
 

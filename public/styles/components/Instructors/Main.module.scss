@@ -8,6 +8,10 @@ $gap: 16px;
 .root {
 	@include dots.right;
 	
+	padding: 100px $horizontal-padding 120px;
+}
+
+.cards {
 	display: grid;
 	grid: none / repeat(auto-fill, $card-width);
 	gap: $gap;
@@ -17,5 +21,4 @@ $gap: 16px;
 		$card-width * $max-columns +
 		$gap * ($max-columns - 1);
 	margin: 0 auto;
-	padding: 100px $horizontal-padding 120px;
 }
