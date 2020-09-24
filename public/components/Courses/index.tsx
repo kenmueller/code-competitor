@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import Tier from 'models/Tier'
 import Navbar from '../Navbar'
 import Header from '../Header'
 import Breadcrumbs from '../Breadcrumbs'
@@ -8,7 +9,11 @@ import Notice from './Notice'
 import Subscribe from '../Subscribe'
 import Footer from '../Footer'
 
-const Courses = () => (
+export interface CoursesProps {
+	tiers: Tier[]
+}
+
+const Courses = ({ tiers }: CoursesProps) => (
 	<>
 		<Head>
 			<title key="title">
@@ -27,7 +32,7 @@ const Courses = () => (
 			trail={[{ url: '/', title: 'Home' }]}
 			title="Courses"
 		/>
-		<Main />
+		<Main tiers={tiers} />
 		<Notice />
 		<Subscribe />
 		<Footer />

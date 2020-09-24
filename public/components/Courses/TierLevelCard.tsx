@@ -1,19 +1,20 @@
 import Link from 'next/link'
 import cx from 'classnames'
 
-import Tier, { TierCourse } from 'models/Tier'
+import Tier from 'models/Tier'
+import Level from 'models/Level'
 
-import styles from 'styles/components/Courses/TierCourseCard.module.scss'
+import styles from 'styles/components/Courses/TierLevelCard.module.scss'
 
-export interface TierCourseCardProps {
+export interface TierLevelCardProps {
 	className?: string
 	tier: Tier
-	course: TierCourse
+	level: Level
 }
 
-const TierCourseCard = ({ className, tier, course }: TierCourseCardProps) => (
+const TierLevelCard = ({ className, tier, level }: TierLevelCardProps) => (
 	<article className={cx(styles.root, className)}>
-		<p className={styles.name}>{course.name}</p>
+		<p className={styles.name}>{level.name}</p>
 		<div className={styles.info}>
 			<div className={styles.rows}>
 				<p className={styles.row}>
@@ -23,19 +24,19 @@ const TierCourseCard = ({ className, tier, course }: TierCourseCardProps) => (
 				<hr className={styles.divider} />
 				<p className={styles.row}>
 					<span className={styles.key}>Ages</span>
-					<span className={styles.value}>{course.ages.min}-{course.ages.max}</span>
+					<span className={styles.value}>{level.ages.min}-{level.ages.max}</span>
 				</p>
 				<hr className={styles.divider} />
 				<p className={styles.row}>
 					<span className={styles.key}>Book required</span>
-					<span className={styles.value}>{course.book ? 'Yes' : 'No'}</span>
+					<span className={styles.value}>{level.bookRequired ? 'Yes' : 'No'}</span>
 				</p>
 			</div>
-			<Link href="/levels/[slug]" as={`/levels/${course.slug}`}>
+			<Link href="/levels/[slug]" as={`/levels/${level.slug}`}>
 				<a className={styles.link}>Learn more</a>
 			</Link>
 		</div>
 	</article>
 )
 
-export default TierCourseCard
+export default TierLevelCard

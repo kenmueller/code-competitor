@@ -8,17 +8,16 @@ import styles from 'styles/components/Courses/FilterButton.module.scss'
 export interface CoursesFilterButtonProps {
 	value: Filter
 	filter: Filter
-	children: string
 }
 
-const CoursesFilterButton = ({ value, filter, children }: CoursesFilterButtonProps) => (
+const CoursesFilterButton = ({ value, filter }: CoursesFilterButtonProps) => (
 	<Link
 		href={`/courses${value ? '/[tier]' : ''}`}
 		as={`/courses${value ? `/${value}` : ''}`}
 		scroll={false}
 	>
 		<a className={cx(styles.root, { [styles.selected]: value === filter })}>
-			{children}
+			{value ?? 'all'}
 		</a>
 	</Link>
 )

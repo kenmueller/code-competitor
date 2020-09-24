@@ -1,18 +1,9 @@
-export interface TierAges {
-	min: number
-	max: number
-}
-
-export interface TierCourse {
-	name: string
-	slug: string
-	ages: TierAges
-	book: boolean
-}
+import Ages from './Ages'
+import Level from './Level'
 
 export default interface Tier {
+	slug: string
 	title: string
-	description: string
-	ages: TierAges
-	courses: TierCourse[]
+	ages: Ages
+	levels: Level[]
 }
