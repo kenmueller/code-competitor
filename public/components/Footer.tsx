@@ -30,6 +30,7 @@ const Footer = () => (
 		<nav className={styles.navigation}>
 			<FooterNavigationLink title="Courses" href="/courses" />
 			<FooterNavigationLink title="Competitions" href="/competitions" />
+			<FooterNavigationLink title="Instructors" href="/instructors" />
 			<FooterNavigationLink title="About" href="/about" />
 			<FooterNavigationLink title="FAQ" href="/faq" />
 			<FooterNavigationLink title="Jobs" href="/jobs" />
