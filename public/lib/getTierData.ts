@@ -1,4 +1,6 @@
-const getTierData = (slug: string) => {
+import Tier from 'models/Tier'
+
+const getTierData = (slug: string): Tier => {
 	const tier = require(`articles/tiers/${slug}.mdx`).meta
 	
 	return {
