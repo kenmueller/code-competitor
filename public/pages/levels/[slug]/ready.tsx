@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import { readdirSync } from 'fs'
 import { join } from 'path'
@@ -14,27 +15,32 @@ export interface LevelReadyProps {
 	name: string
 }
 
-const LevelReady = ({ name }: LevelReadyProps) => (
-	<>
-		<Head>
-			<title key="title">
-				Are you ready for {name}? - Code Competitor
-			</title>
-		</Head>
-		<Navbar light />
-		<Header title={`Are you ready for ${name}?`} />
-		<Breadcrumbs
-			trail={[
-				{ url: '/', title: 'Home' },
-				{ url: '/courses', title: 'Courses' }
-			]}
-			title={`Are you ready for ${name}?`}
-		/>
-		<Main />
-		<Subscribe />
-		<Footer />
-	</>
-)
+const LevelReady = ({ name }: LevelReadyProps) => {
+	const slug = useRouter().query.slug as string
+	
+	return (
+		<>
+			<Head>
+				<title key="title">
+					Are you ready for {name}? - Code Competitor
+				</title>
+			</Head>
+			<Navbar light />
+			<Header title={`Are you ready for ${name}?`} />
+			<Breadcrumbs
+				trail={[
+					{ url: '/', title: 'Home' },
+					{ url: '/courses', title: 'Courses' },
+					{ url: `/levels/${slug}`, title: name }
+				]}
+				title={`Are you ready for ${name}?`}
+			/>
+			<Main />
+			<Subscribe />
+			<Footer />
+		</>
+	)
+}
 
 export default LevelReady
 
