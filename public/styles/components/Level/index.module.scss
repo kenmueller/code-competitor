@@ -1,0 +1,8 @@
+.header {
+	$background: transparentize(#1486e7, 0.16);
+	
+	background:
+		linear-gradient(to right, $background, $background),
+		url('../../../images/level/header.png') center no-repeat;
+	background-size: cover;
+}

@@ -12,6 +12,8 @@ import Main from 'components/Level/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
+import styles from 'styles/components/Level/index.module.scss'
+
 const LevelPage = () => {
 	const slug = useRouter().query.slug as string
 	const level: Level = require(`articles/levels/${slug}/index.mdx`).meta
@@ -24,7 +26,7 @@ const LevelPage = () => {
 				</title>
 			</Head>
 			<Navbar light />
-			<Header title={level.name}>
+			<Header className={styles.header} title={level.name}>
 				{level.subtitle}
 			</Header>
 			<Breadcrumbs
