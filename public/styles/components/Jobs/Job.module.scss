@@ -1,0 +1,35 @@
+.title {
+	margin-bottom: 35px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 900;
+	color: #1486e7;
+}
+
+.articles {
+	display: grid;
+	grid:
+		'description requirements' auto
+		'description compensation' 1fr /
+		auto;
+	gap: 40px;
+}
+
+.description {
+	grid-area: description;
+}
+
+.requirements {
+	grid-area: requirements;
+}
+
+.compensation {
+	grid-area: compensation;
+}
+
+.subtitle {
+	margin-bottom: 12px;
+	font-size: 18px;
+	font-weight: 900;
+	color: #555;
+}

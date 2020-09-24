@@ -16,15 +16,26 @@ const JobsJob = ({ category, job }: JobsJobProps) => {
 	return (
 		<article id={job.slug} className={styles.root}>
 			<h3 className={styles.title}>{job.name}</h3>
-			<Article>
-				<Description />
-			</Article>
-			<Article>
-				<Requirements />
-			</Article>
-			<Article>
-				<Compensation />
-			</Article>
+			<div className={styles.articles}>
+				<div className={styles.description}>
+					<h4 className={styles.subtitle}>Description</h4>
+					<Article>
+						<Description />
+					</Article>
+				</div>
+				<div className={styles.requirements}>
+					<h4 className={styles.subtitle}>Requirements</h4>
+					<Article>
+						<Requirements />
+					</Article>
+				</div>
+				<div className={styles.compensation}>
+					<h4 className={styles.subtitle}>Compensation</h4>
+					<Article>
+						<Compensation />
+					</Article>
+				</div>
+			</div>
 		</article>
 	)
 }

@@ -1,0 +1,20 @@
+.root {
+	margin-top: 80px;
+}
+
+.title {
+	text-align: center;
+	font-size: 32px;
+	font-weight: 900;
+	color: #333;
+}
+
+.divider {
+	$height: 3px;
+	
+	max-width: 64px;
+	height: $height;
+	margin: 35px auto;
+	background: transparentize(#1486e7, 0.76);
+	border-radius: $height / 2;
+}
