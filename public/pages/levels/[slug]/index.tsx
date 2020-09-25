@@ -14,7 +14,11 @@ import Footer from 'components/Footer'
 
 import styles from 'styles/components/Level/index.module.scss'
 
-const LevelPage = () => {
+export interface LevelPageProps {
+	lastSession: number
+}
+
+const LevelPage = ({ lastSession }: LevelPageProps) => {
 	const slug = useRouter().query.slug as string
 	const level: Level = require(`articles/levels/${slug}/index.mdx`).meta
 	
@@ -36,7 +40,7 @@ const LevelPage = () => {
 				]}
 				title={level.name}
 			/>
-			<Main />
+			<Main lastSession={lastSession} />
 			<Subscribe />
 			<Footer />
 		</>
@@ -52,6 +56,11 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 	fallback: false
 })
 
-export const getStaticProps: GetStaticProps = async ({ params }) => ({
-	props: {}
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => ({
+	props: {
+		lastSession: readdirSync(join(process.cwd(), `articles/levels/${slug}/sessions`))
+			.reduce((max, path) => (
+				Math.max(max, parseInt(path.replace(/\.mdx$/, '')))
+			), -1)
+	}
 })
