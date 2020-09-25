@@ -4,6 +4,7 @@ import { Svg } from 'react-optimized-image'
 
 import Level from 'models/Level'
 import Info from './Info'
+import Schedule from './Schedule'
 import Sessions from './Sessions'
 import rightArrow from 'images/icons/right-arrow.svg'
 
@@ -29,6 +30,7 @@ const LevelMain = ({ lastSession }: LevelMainProps) => {
 				</Link>
 			</p>
 			<Info />
+			<Schedule />
 			<Sessions last={lastSession} />
 		</main>
 	)

@@ -70,7 +70,7 @@ const LevelInfo = () => {
 						</p>
 					</div>
 					<p className={styles.price}>${level.price}</p>
-					<a className={styles.scheduleLink} href="#">
+					<a className={styles.scheduleLink} href="#schedule">
 						Class schedule
 					</a>
 				</article>
