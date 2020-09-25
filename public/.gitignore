@@ -2,3 +2,5 @@
 node_modules/
 .next/
 out/
+public/sw.js
+public/workbox-*.js
