@@ -12,6 +12,6 @@
 
 .sessions {
 	display: grid;
-	grid: none / repeat(auto-fill, 180px);
+	grid: none / repeat(auto-fill, minmax(180px, 1fr));
 	gap: 16px;
 }
