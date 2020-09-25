@@ -1,0 +1,17 @@
+.root {
+	max-width: 1000px;
+	margin: 50px auto 0;
+}
+
+.title {
+	margin-bottom: 20px;
+	font-size: 24px;
+	font-weight: 900;
+	color: #1486e7;
+}
+
+.sessions {
+	display: grid;
+	grid: none / repeat(auto-fill, 180px);
+	gap: 16px;
+}
