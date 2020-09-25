@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
 import { Svg } from 'react-optimized-image'
 
@@ -15,19 +16,15 @@ export interface BreadcrumbsProps {
 	title: string
 }
 
-const BreadcrumbsSegment = ({ url, title }: Breadcrumb) => (
-	<>
-		<Link href={url}>
-			<a className={styles.link}>{title}</a>
-		</Link>
-		<Svg className={styles.divider} src={rightArrow} />
-	</>
-)
-
 const Breadcrumbs = ({ trail, title }: BreadcrumbsProps) => (
 	<section className={styles.root}>
 		{trail.map(({ url, title }) => (
-			<BreadcrumbsSegment key={url} url={url} title={title} />
+			<Fragment key={url}>
+				<Link href={url}>
+					<a className={styles.link}>{title}</a>
+				</Link>
+				<Svg className={styles.divider} src={rightArrow} />
+			</Fragment>
 		))}
 		<span className={styles.title}>{title}</span>
 	</section>
