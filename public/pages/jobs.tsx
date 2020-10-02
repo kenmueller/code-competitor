@@ -1,10 +1,10 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
 import { JobCategory } from 'models/Job'
 import normalize from 'lib/normalize'
+import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
@@ -18,11 +18,11 @@ export interface JobsProps {
 
 const Jobs = ({ categories }: JobsProps) => (
 	<>
-		<Head>
-			<title key="title">
-				Jobs - Code Competitor
-			</title>
-		</Head>
+		<Head
+			url="https://codecompetitor.com/jobs"
+			title="Jobs - Code Competitor"
+			description="Explore the available jobs at Code Competitor."
+		/>
 		<Navbar light />
 		<Header title="Join the Team" />
 		<Breadcrumbs

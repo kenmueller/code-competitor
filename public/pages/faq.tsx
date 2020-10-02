@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
+import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
@@ -16,11 +16,11 @@ export interface FAQProps {
 
 const FAQ = ({ questions }: FAQProps) => (
 	<>
-		<Head>
-			<title key="title">
-				Frequently Asked Questions - Code Competitor
-			</title>
-		</Head>
+		<Head
+			url="https://codecompetitor.com/faq"
+			title="Frequently Asked Questions - Code Competitor"
+			description="View the frequently asked questions about Code Competitor. Ask your own!"
+		/>
 		<Navbar light />
 		<Header title="Frequently Asked Questions" />
 		<Breadcrumbs

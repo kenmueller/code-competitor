@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
 import { BasicInstructor } from 'models/Instructor'
+import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
@@ -17,11 +17,11 @@ export interface InstructorsProps {
 
 const InstructorProfile = ({ users }: InstructorsProps) => (
 	<>
-		<Head>
-			<title key="title">
-				Instructors - Code Competitor
-			</title>
-		</Head>
+		<Head
+			url="https://codecompetitor.com/instructors"
+			title="Instructors - Code Competitor"
+			description="Explore all instructors currently working at Code Competitor."
+		/>
 		<Navbar light />
 		<Header title="Instructors" />
 		<Breadcrumbs

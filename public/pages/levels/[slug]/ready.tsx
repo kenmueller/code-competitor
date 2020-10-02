@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
+import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
 import Breadcrumbs from 'components/Breadcrumbs'
@@ -20,11 +20,11 @@ const LevelReady = ({ name }: LevelReadyProps) => {
 	
 	return (
 		<>
-			<Head>
-				<title key="title">
-					Are you ready for {name}? - Code Competitor
-				</title>
-			</Head>
+			<Head
+				url={`https://codecompetitor.com/levels/${slug}/ready`}
+				title={`Are you ready for ${name}? - Code Competitor`}
+				description={`See if you're ready for ${name} at Code Competitor by taking a brief readiness test.`}
+			/>
 			<Navbar light />
 			<Header title={`Are you ready for ${name}?`} />
 			<Breadcrumbs

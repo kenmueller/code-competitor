@@ -1,5 +1,4 @@
-import Head from 'next/head'
-
+import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Home/Header'
 import Info from 'components/Home/Info'
@@ -10,11 +9,11 @@ import Footer from 'components/Footer'
 
 const Home = () => (
 	<>
-		<Head>
-			<title key="title">
-				Code Competitor
-			</title>
-		</Head>
+		<Head
+			url="https://codecompetitor.com"
+			title="Code Competitor"
+			description="From 0 to Competitive. Creating apps won't get you into a Top University. Placing in a Coding Competition can."
+		/>
 		<Navbar />
 		<Header />
 		<Info />
