@@ -9,6 +9,7 @@
 	"dependencies": {
 		"@mdx-js/loader": "^1.6.18",
 		"@next/mdx": "^9.5.3",
+		"@types/react-dom": "^16.9.8",
 		"classnames": "^2.2.6",
 		"next": "^9.5.3",
 		"next-compose-plugins": "^2.2.0",
@@ -18,7 +19,8 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-optimized-image": "^0.4.1",
-		"sass": "^1.26.11"
+		"sass": "^1.26.11",
+		"string-strip-html": "^6.0.4"
 	},
 	"devDependencies": {
 		"@types/classnames": "^2.2.10",
