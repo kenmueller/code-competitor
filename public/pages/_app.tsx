@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { src as favicon } from 'images/logos/icon.png'
+import { src as icon } from 'images/logos/icon.png'
 import { src as share } from 'images/logos/share.png'
 
 import 'styles/global.scss'
@@ -19,7 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => (
 				rel="stylesheet"
 				href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700;900&display=swap"
 			/>
-			<link key="icon" rel="icon" href={favicon} />
+			<link key="icon" rel="icon" href={icon} />
 			<meta key="meta-og-site-name" property="og:site_name" content="Code Competitor" />
 			<meta key="meta-og-type" property="og:type" content="website" />
 			<meta key="meta-og-image" property="og:image" content={share} />
