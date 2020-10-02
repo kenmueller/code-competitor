@@ -25,6 +25,7 @@ const InstructorProfile = ({ bio }: InstructorProfileProps) => {
 		<>
 			<Head
 				url={`https://codecompetitor.com/instructors/${slug}`}
+				image={require(`images/instructors/${slug}.png`).src}
 				title={`${name} - Code Competitor`}
 				description={bio}
 			/>

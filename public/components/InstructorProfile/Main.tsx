@@ -23,7 +23,7 @@ const InstructorProfileMain = () => {
 				<div className={styles.imageContainer}>
 					<Img
 						className={styles.image}
-						src={require(`images/instructors/${slug}.jpg`)}
+						src={require(`images/instructors/${slug}.png`)}
 						alt={user.name}
 						webp
 					/>
