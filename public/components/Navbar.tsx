@@ -67,7 +67,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
 				<a>
 					<Img
 						className={styles.logo}
-						src={require(`images/logos/${light ? 'white' : 'blue'}.png`)}
+						src={require(`images/logos/${light ? 'light' : 'dark'}.png`)}
 						alt="Logo"
 						webp
 					/>
