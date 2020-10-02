@@ -15,7 +15,7 @@ const InstructorsMainCard = ({ user }: InstructorsMainCardProps) => (
 			<div className={styles.imageContainer}>
 				<Img
 					className={styles.image}
-					src={require(`images/instructors/${user.slug}.jpg`)}
+					src={require(`images/instructors/${user.slug}.png`)}
 					alt={user.name}
 					webp
 				/>
