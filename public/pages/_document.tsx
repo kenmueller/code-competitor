@@ -7,6 +7,7 @@ export default class CustomDocument extends Document {
 			<body>
 				<Main />
 				<NextScript />
+				<script id="hs-script-loader" src="https://js.hs-scripts.com/8575779.js" async />
 			</body>
 		</Html>
 	)
