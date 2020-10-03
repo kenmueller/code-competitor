@@ -28,7 +28,19 @@
 }
 
 .logo {
-	height: 60px;
+	height: 30px;
+	
+	@media (min-width: 380px) {
+		height: 40px;
+	}
+	
+	@media (min-width: 450px) {
+		height: 50px;
+	}
+	
+	@media (min-width: 600px) {
+		height: 60px;
+	}
 }
 
 .menu {
