@@ -78,6 +78,7 @@ const Navbar = ({ light = false }: NavbarProps) => {
 					ref={menuTrigger}
 					className={styles.menuTrigger}
 					onClick={toggleIsMenuShowing}
+					title="Menu"
 					aria-haspopup
 				>
 					<Svg
