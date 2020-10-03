@@ -10,6 +10,7 @@ const HomeClasses = () => (
 			className={styles.image}
 			src={image}
 			alt="Classes"
+			loading="lazy"
 			webp
 		/>
 		<article className={styles.content}>
