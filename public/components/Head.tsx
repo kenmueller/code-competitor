@@ -16,13 +16,13 @@ const Head = ({ url, image: _image, title, description }: HeadProps) => {
 		<NextHead>
 			<link key="canonical" rel="canonical" href={url} />
 			<meta key="description" name="description" content={description} />
-			<meta key="meta-og-url" property="og:url" content={url} />
-			<meta key="meta-og-image" property="og:image" content={image} />
-			<meta key="meta-og-title" property="og:title" content={title} />
-			<meta key="meta-og-description" property="og:description" content={description} />
-			<meta key="meta-twitter-image" name="twitter:image" content={image} />
-			<meta key="meta-twitter-title" name="twitter:title" content={title} />
-			<meta key="meta-twitter-description" name="twitter:description" content={description} />
+			<meta key="og-url" property="og:url" content={url} />
+			<meta key="og-image" property="og:image" content={image} />
+			<meta key="og-title" property="og:title" content={title} />
+			<meta key="og-description" property="og:description" content={description} />
+			<meta key="twitter-image" name="twitter:image" content={image} />
+			<meta key="twitter-title" name="twitter:title" content={title} />
+			<meta key="twitter-description" name="twitter:description" content={description} />
 			<title key="title">{title}</title>
 		</NextHead>
 	)
