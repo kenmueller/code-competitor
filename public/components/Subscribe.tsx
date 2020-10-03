@@ -40,7 +40,7 @@ const Subscribe = () => {
 					value={email}
 					onChange={onInputChange}
 				/>
-				<input name={FAKE_INPUT_NAME} tabIndex={-1} hidden aria-hidden />
+				<input name={FAKE_INPUT_NAME} tabIndex={-1} hidden />
 				<button className={styles.button}>
 					Submit
 				</button>
