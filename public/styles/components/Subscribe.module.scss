@@ -1,6 +1,10 @@
 .root {
-	padding: 65px 45px;
+	padding: 65px 25px;
 	background: transparentize(#1486e7, 0.9);
+	
+	@media (min-width: 460px) {
+		padding: 65px 45px;
+	}
 	
 	@media (min-width: 600px) {
 		padding: 65px;
