@@ -29,12 +29,15 @@ const App = ({ Component, pageProps }: AppProps) => {
 					href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700;900&display=swap"
 				/>
 				<link key="icon" rel="icon" href={icon} />
-				<meta key="meta-og-site-name" property="og:site_name" content="Code Competitor" />
-				<meta key="meta-og-type" property="og:type" content="website" />
-				<meta key="meta-twitter-card" name="twitter:card" content="summary_large_image" />
-				<meta key="meta-twitter-site" name="twitter:site" content="@codecompetitor" />
-				<meta key="meta-twitter-creator" name="twitter:creator" content="@codecompetitor" />
-				<meta key="meta-twitter-domain" name="twitter:domain" content="codecompetitor.com" />
+				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.png" />
+				<link key="manifest" rel="manifest" href="/manifest.webmanifest" />
+				<meta key="theme-color" name="theme-color" content="white" />
+				<meta key="og-site-name" property="og:site_name" content="Code Competitor" />
+				<meta key="og-type" property="og:type" content="website" />
+				<meta key="twitter-card" name="twitter:card" content="summary_large_image" />
+				<meta key="twitter-site" name="twitter:site" content="@codecompetitor" />
+				<meta key="twitter-creator" name="twitter:creator" content="@codecompetitor" />
+				<meta key="twitter-domain" name="twitter:domain" content="codecompetitor.com" />
 			</Head>
 			<Component {...pageProps} />
 		</>
