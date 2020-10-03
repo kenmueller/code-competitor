@@ -6,13 +6,20 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 600px;
-	padding: 0 35px;
+	height: 550px;
+	padding: 0 15px;
+	text-align: center;
 	color: #333;
 	background:
 		linear-gradient(to right, transparentize(white, 0.12), transparent),
 		url('../../../images/home/header.png') center no-repeat;
 	background-size: cover;
+	
+	@media (min-width: 440px) {
+		height: 600px;
+		padding: 0 35px;
+		text-align: left;
+	}
 	
 	@media (min-width: 500px) {
 		height: 650px;
@@ -36,8 +43,12 @@
 }
 
 .title {
-	font-size: 32px;
+	font-size: 26px;
 	font-weight: 900;
+	
+	@media (min-width: 440px) {
+		font-size: 32px;
+	}
 	
 	@media (min-width: 600px) {
 		font-size: 42px;
@@ -50,7 +61,11 @@
 
 .subtitle {
 	margin: 12px 0 36px;
-	font-size: 16px;
+	font-size: 14px;
+	
+	@media (min-width: 440px) {
+		font-size: 16px;
+	}
 	
 	@media (min-width: 500px) {
 		font-size: 18px;
@@ -63,6 +78,14 @@
 
 .navigation {
 	display: flex;
+	flex-direction: column;
+	max-width: max-content;
+	margin: 0 auto;
+	
+	@media (min-width: 440px) {
+		flex-direction: row;
+		margin: 0;
+	}
 }
 
 @mixin navigation-link($color) {
@@ -77,13 +100,21 @@
 }
 
 .navigationLink {
-	padding: 10px 12px;
+	padding: 10px 22px;
+	text-align: center;
 	text-decoration: none;
-	font-size: 18px;
 	font-weight: 900;
 	color: white;
 	border-radius: 8px;
 	transition: color 0.3s, background 0.3s, transform 0.3s;
+	
+	@media (min-width: 440px) {
+		padding: 10px 12px;
+	}
+	
+	@media (min-width: 460px) {
+		font-size: 18px;
+	}
 	
 	@media (min-width: 500px) {
 		padding: 10px 22px;
@@ -94,7 +125,11 @@
 	}
 	
 	& + & {
-		margin-left: 16px;
+		margin: 16px 0 0;
+		
+		@media (min-width: 440px) {
+			margin: 0 0 0 16px;
+		}
 	}
 }
 
