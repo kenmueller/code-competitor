@@ -1,0 +1,18 @@
+{
+	"short_name": "Code Competitor",
+	"name": "Code Competitor",
+	"description": "From 0 to Competitive. Creating apps won't get you into a Top University. Placing in a Coding Competition can.",
+	"icons": [
+		{
+			"src": "/icons/512x512.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "any maskable"
+		}
+	],
+	"start_url": "/",
+	"background_color": "white",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "white"
+}
