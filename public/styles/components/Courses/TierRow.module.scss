@@ -1,4 +1,5 @@
 $spacing: 16px;
+$card-width: 280px;
 
 @mixin color($color, $background) {
 	--tier-color: #{$color};
@@ -11,17 +12,20 @@ $spacing: 16px;
 .platinum { @include color(#4d6a82, #e7f0f6); }
 
 .root {
-	display: flex;
+	display: grid;
+	grid: 1fr / #{$card-width};
+	grid-auto-rows: 1fr !important;
+	gap: $spacing;
+	
+	@media (min-width: 615px) {
+		grid: 1fr / repeat(2, $card-width);
+	}
+	
+	@media (min-width: 1200px) {
+		grid: 1fr / repeat(4, $card-width);
+	}
 	
 	& + & {
 		margin-top: $spacing;
-	}
-}
-
-.card {
-	width: 280px;
-	
-	& + & {
-		margin-left: $spacing;
 	}
 }

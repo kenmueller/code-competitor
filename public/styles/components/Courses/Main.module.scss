@@ -3,11 +3,14 @@
 }
 
 .filters {
+	$spacing: 16px;
+	
 	display: grid;
 	grid: 1fr / repeat(5, 1fr);
-	gap: 16px;
-	max-width: 1000px;
+	gap: $spacing;
+	max-width: 1000px + $spacing * 2;
 	margin: 0 auto;
+	padding: 0 $spacing;
 }
 
 .tiers {

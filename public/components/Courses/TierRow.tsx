@@ -14,12 +14,7 @@ const CoursesTierRow = ({ tier }: CoursesTierRowProps) => (
 	<div className={cx(styles.root, styles[tier.slug])}>
 		<TierTitleCard className={styles.card} tier={tier} />
 		{tier.levels.map(level => (
-			<TierLevelCard
-				key={level.slug}
-				className={styles.card}
-				tier={tier}
-				level={level}
-			/>
+			<TierLevelCard key={level.slug} tier={tier} level={level} />
 		))}
 	</div>
 )
