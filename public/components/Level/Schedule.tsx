@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import styles from 'styles/components/Level/Schedule.module.scss'
 
 const LevelSchedule = () => {
