@@ -4,5 +4,13 @@
 	@include dots.right;
 	
 	margin: 0 auto;
-	padding: 60px 40px;
+	padding: 60px 20px;
+	
+	@media (min-width: 500px) {
+		padding: 60px 30px;
+	}
+	
+	@media (min-width: 600px) {
+		padding: 60px 40px;
+	}
 }
