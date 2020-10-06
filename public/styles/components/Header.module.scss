@@ -3,24 +3,40 @@
 .root {
 	@include dots.left;
 	
-	padding: 150px 60px 95px;
+	padding: 120px 20px 65px;
 	text-align: center;
 	background: #1486e7;
+	
+	@media (min-width: 450px) {
+		padding: 150px 30px 95px;
+	}
+	
+	@media (min-width: 600px) {
+		padding: 150px 60px 95px;
+	}
 }
 
 .title {
-	font-size: 56px;
+	font-size: 50px;
 	font-weight: 900;
-	line-height: 64px;
+	line-height: 58px;
 	color: white;
+	
+	@media (min-width: 450px) {
+		font-size: 56px;
+		line-height: 64px;
+	}
 }
 
 .description {
 	max-width: 768px;
 	margin: 32px auto 0;
-	font-size: 18px;
 	font-weight: bold;
 	line-height: 26px;
 	color: white;
 	opacity: 0.9;
+	
+	@media (min-width: 450px) {
+		font-size: 18px;
+	}
 }
