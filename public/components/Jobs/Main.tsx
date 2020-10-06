@@ -1,7 +1,9 @@
 import { Fragment } from 'react'
+import { Svg } from 'react-optimized-image'
 
 import { JobCategory } from 'models/Job'
 import Category from './Category'
+import rightArrow from 'images/icons/right-arrow.svg'
 
 import styles from 'styles/components/Jobs/Main.module.scss'
 
@@ -32,7 +34,8 @@ const JobsMain = ({ categories }: JobsMainProps) => (
 									<td className={styles.value}>{job.name}</td>
 									<td className={styles.value}>
 										<a className={styles.link} href={`#${job.slug}`}>
-											Learn more
+											<Svg className={styles.linkIcon} src={rightArrow} />
+											<span className={styles.linkText}>Learn more</span>
 										</a>
 									</td>
 								</tr>

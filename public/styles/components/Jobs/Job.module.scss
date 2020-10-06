@@ -1,18 +1,31 @@
 .title {
 	margin-bottom: 35px;
 	text-align: center;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 900;
+	line-height: 1.5;
 	color: #1486e7;
+	
+	@media (min-width: 500px) {
+		font-size: 24px;
+	}
 }
 
 .articles {
 	display: grid;
 	grid:
-		'description requirements' auto
-		'description compensation' 1fr /
+		'description' auto
+		'requirements' auto
+		'compensation' auto /
 		auto;
 	gap: 40px;
+	
+	@media (min-width: 600px) {
+		grid:
+			'description requirements' auto
+			'description compensation' 1fr /
+			auto;
+	}
 }
 
 .description {
@@ -38,10 +51,19 @@
 	margin-top: 50px;
 	padding: 32px;
 	text-align: center;
-	font-size: 17px;
+	font-size: 15px;
+	line-height: 1.5;
 	color: #555;
 	border: 3px solid #f2f2f2;
 	border-radius: 12px;
+	
+	@media (min-width: 400px) {
+		font-size: 16px;
+	}
+	
+	@media (min-width: 600px) {
+		font-size: 17px;
+	}
 }
 
 .noticeLink {

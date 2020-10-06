@@ -1,12 +1,21 @@
 .root {
-	margin-top: 80px;
+	margin-top: 60px;
+	
+	@media (min-width: 500px) {
+		margin-top: 80px;
+	}
 }
 
 .title {
 	text-align: center;
-	font-size: 32px;
+	font-size: 28px;
 	font-weight: 900;
+	line-height: 1.5;
 	color: #333;
+	
+	@media (min-width: 500px) {
+		font-size: 32px;
+	}
 }
 
 .divider {
