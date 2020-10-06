@@ -3,5 +3,13 @@
 .root {
 	@include dots.right;
 	
-	padding: 60px 60px 120px;
+	padding: 60px 15px 120px;
+	
+	@media (min-width: 450px) {
+		padding: 60px 30px 120px;
+	}
+	
+	@media (min-width: 700px) {
+		padding: 60px 60px 120px;
+	}
 }

@@ -1,3 +1,7 @@
+import { Svg } from 'react-optimized-image'
+
+import rightArrow from 'images/icons/right-arrow.svg'
+
 import styles from 'styles/components/Competitions/Competition.module.scss'
 
 export interface CompetitionsCompetitionProps {
@@ -26,7 +30,8 @@ const CompetitionsCompetition = ({ title, description, labels, rows }: Competiti
 						<td className={styles.value}>{row[1]}</td>
 						<td className={styles.value}>
 							<a className={styles.link} href={row[2]}>
-								Learn more
+								<Svg className={styles.linkIcon} src={rightArrow} />
+								<span className={styles.linkText}>Learn more</span>
 							</a>
 						</td>
 					</tr>

@@ -1,8 +1,13 @@
-$padding: 30px;
+$padding: var(--padding);
 
 .root {
+	--padding: 15px;
 	max-width: 800px;
 	margin: 0 auto;
+	
+	@media (min-width: 600px) {
+		--padding: 30px;
+	}
 	
 	& + & {
 		margin-top: 60px;
@@ -17,9 +22,13 @@ $padding: 30px;
 
 .description {
 	margin: 20px 0;
-	font-size: 20px;
-	line-height: 32px;
+	line-height: 28px;
 	color: #555;
+	
+	@media (min-width: 700px) {
+		font-size: 20px;
+		line-height: 32px;
+	}
 }
 
 .table {
@@ -36,11 +45,11 @@ $padding: 30px;
 .label,
 .value {
 	&:first-child {
-		padding-left: $padding;
+		padding-left: var(--padding);
 	}
 	
 	&:last-child {
-		padding-right: $padding;
+		padding-right: var(--padding);
 		text-align: right;
 	}
 }
@@ -49,8 +58,12 @@ $padding: 30px;
 	padding: 16px 0;
 	text-align: left;
 	text-transform: uppercase;
-	font-size: 14px;
+	font-size: 12px;
 	color: #636363;
+	
+	@media (min-width: 600px) {
+		font-size: 14px;
+	}
 }
 
 .row:nth-child(even) {
@@ -58,13 +71,22 @@ $padding: 30px;
 }
 
 .value {
-	padding: $padding 0;
+	padding: var(--padding) 0;
+	font-size: 12px;
 	color: #555;
+	
+	@media (min-width: 450px) {
+		font-size: 14px;
+	}
+	
+	@media (min-width: 600px) {
+		font-size: 16px;
+	}
 }
 
 .link {
 	display: inline-block;
-	padding: 8px 16px;
+	padding: 8px 12px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #1486e7;
@@ -72,6 +94,10 @@ $padding: 30px;
 	border: 1px solid #d8ebfb;
 	border-radius: 6px;
 	transition: color 0.3s, background 0.3s, border-color 0.3s, transform 0.3s;
+	
+	@media (min-width: 550px) {
+		padding: 8px 16px;
+	}
 	
 	&:hover,
 	&:active {
@@ -82,5 +108,21 @@ $padding: 30px;
 	
 	&:active {
 		transform: translateY(2px);
+	}
+}
+
+.linkIcon {
+	vertical-align: middle;
+	
+	@media (min-width: 550px) {
+		display: none;
+	}
+}
+
+.linkText {
+	display: none;
+	
+	@media (min-width: 550px) {
+		display: block;
 	}
 }
