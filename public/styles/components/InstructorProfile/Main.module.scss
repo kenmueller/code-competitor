@@ -4,8 +4,36 @@
 	@include dots.right;
 	
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	padding: 100px 60px 120px;
+	align-items: center;
+	padding: 100px 15px 120px;
+	
+	@media (min-width: 480px) {
+		padding: 100px 30px 120px;
+	}
+	
+	@media (min-width: 700px) {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	
+	@media (min-width: 900px) {
+		padding: 100px 60px 120px;
+	}
+}
+
+.aside {
+	flex-shrink: 0;
+	margin: 0 0 30px;
+	
+	@media (min-width: 700px) {
+		margin: 0 30px 0 0;
+	}
+	
+	@media (min-width: 800px) {
+		margin: 0 60px 0 0;
+	}
 }
 
 .imageContainer {
@@ -33,11 +61,6 @@
 	height: $dimension;
 	object-fit: cover;
 	border-radius: 50%;
-}
-
-.aside {
-	flex-shrink: 0;
-	margin-right: 60px;
 }
 
 .contactLabel {
@@ -82,20 +105,33 @@
 
 .bio {
 	margin: 20px 0;
-	font-size: 20px;
-	line-height: 32px;
+	font-size: 16px;
+	line-height: 28px;
+	
+	@media (min-width: 800px) {
+		font-size: 20px;
+		line-height: 32px;
+	}
 }
 
 .infoContainer {
-	padding: 30px;
+	padding: 15px;
 	background: transparentize(#1486e7, 0.9);
 	border-radius: 12px;
+	
+	@media (min-width: 800px) {
+		padding: 30px;
+	}
 }
 
 .info {
 	padding: 20px 16px;
 	background: white;
-	border-radius: 12px;
+	border-radius: 8px;
+	
+	@media (min-width: 800px) {
+		border-radius: 12px;
+	}
 }
 
 .infoRow {
@@ -113,13 +149,22 @@
 }
 
 .infoKey {
-	margin-right: 8px;
+	margin-right: 12px;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 12px;
 	color: #949494;
+	
+	@media (min-width: 800px) {
+		font-size: 13px;
+	}
 }
 
 .infoValue {
-	font-size: 15px;
+	text-align: right;
+	font-size: 13px;
 	color: #555;
+	
+	@media (min-width: 800px) {
+		font-size: 15px;
+	}
 }
