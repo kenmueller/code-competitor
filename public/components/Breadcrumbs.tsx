@@ -18,15 +18,17 @@ export interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ trail, title }: BreadcrumbsProps) => (
 	<section className={styles.root}>
-		{trail.map(({ url, title }) => (
-			<Fragment key={url}>
-				<Link href={url}>
-					<a className={styles.link}>{title}</a>
-				</Link>
-				<Svg className={styles.divider} src={rightArrow} />
-			</Fragment>
-		))}
-		<span className={styles.title}>{title}</span>
+		<div className={styles.container}>
+			{trail.map(({ url, title }) => (
+				<Fragment key={url}>
+					<Link href={url}>
+						<a className={styles.link}>{title}</a>
+					</Link>
+					<Svg className={styles.divider} src={rightArrow} />
+				</Fragment>
+			))}
+			<span className={styles.title}>{title}</span>
+		</div>
 	</section>
 )
 

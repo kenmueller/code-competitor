@@ -1,9 +1,22 @@
+$padding: 16px;
+
 .root {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 16px 0;
 	background: transparentize(#1486e7, 0.9);
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+	max-width: max-content;
+	margin: 0 auto;
+	padding: $padding;
+}
+
+.link,
+.divider,
+.title {
+	flex-shrink: 0;
 }
 
 .link {
@@ -27,5 +40,6 @@
 }
 
 .title {
+	padding-right: $padding;
 	color: transparentize(#333, 0.5);
 }
