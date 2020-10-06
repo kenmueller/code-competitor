@@ -26,8 +26,17 @@ button {
 }
 
 pre,
+pre .token,
 code {
 	font-family: monospace;
-	font-size: larger;
 	font-weight: bold;
+}
+
+pre,
+code {
+	font-size: larger;
+}
+
+pre {
+	overflow-x: auto;
 }
