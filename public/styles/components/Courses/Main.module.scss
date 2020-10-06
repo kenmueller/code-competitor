@@ -3,14 +3,22 @@
 }
 
 .filters {
-	$spacing: 16px;
+	$horizontal-padding: 16px;
 	
 	display: grid;
 	grid: 1fr / repeat(5, 1fr);
-	gap: $spacing;
-	max-width: 1000px + $spacing * 2;
+	gap: 2px;
+	max-width: 1000px + $horizontal-padding * 2;
 	margin: 0 auto;
-	padding: 0 $spacing;
+	padding: 0 $horizontal-padding;
+	
+	@media (min-width: 380px) {
+		gap: 8px;
+	}
+	
+	@media (min-width: 650px) {
+		gap: 16px;
+	}
 }
 
 .tiers {
