@@ -20,26 +20,31 @@ export default onCall(async data => {
 				throw new HttpsError('invalid-argument', 'Invalid level')
 			
 			const url = `https://codecompetitor.com/levels/level-${level}`
-			const session = await stripe.checkout.sessions.create({
-				payment_method_types: ['card'],
-				line_items: [
-					{
-						price_data: {
-							currency: 'usd',
-							product_data: {
-								name: `Level ${level}`
-							},
-							unit_amount: 500
-						},
-						quantity: 1
-					}
-				],
-				mode: 'payment',
-				success_url: `${url}/success`,
-				cancel_url: `${url}/cancel`
-			})
 			
-			return session.id
+			try {
+				const session = await stripe.checkout.sessions.create({
+					payment_method_types: ['card'],
+					line_items: [
+						{
+							price_data: {
+								currency: 'usd',
+								product_data: {
+									name: `Level ${level}`
+								},
+								unit_amount: 500
+							},
+							quantity: 1
+						}
+					],
+					mode: 'payment',
+					success_url: `${url}/success`,
+					cancel_url: `${url}/cancel`
+				})
+				
+				return session.id
+			} catch (error) {
+				throw new HttpsError('internal', error.message)
+			}
 		default:
 			throw new HttpsError('invalid-argument', 'Invalid type')
 	}
