@@ -8,4 +8,5 @@ export default interface Level {
 	usacoLevel: string
 	ages: Ages
 	bookRequired: boolean
+	comingSoon?: boolean
 }

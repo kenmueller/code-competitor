@@ -53,9 +53,9 @@ const LevelPage = ({ description, lastSession }: LevelPageProps) => {
 export default LevelPage
 
 export const getStaticPaths: GetStaticPaths = async () => ({
-	paths: readdirSync(join(process.cwd(), 'articles/levels')).map(slug => ({
-		params: { slug }
-	})),
+	paths: readdirSync(join(process.cwd(), 'articles/levels'))
+		.filter(slug => !require(`articles/levels/${slug}/index.mdx`).meta.comingSoon)
+		.map(slug => ({ params: { slug } })),
 	fallback: false
 })
 

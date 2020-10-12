@@ -32,9 +32,14 @@ const TierLevelCard = ({ className, tier, level }: TierLevelCardProps) => (
 					<span className={styles.value}>{level.bookRequired ? 'Yes' : 'No'}</span>
 				</p>
 			</div>
-			<Link href="/levels/[slug]" as={`/levels/${level.slug}`}>
-				<a className={styles.link}>Learn more</a>
-			</Link>
+			{level.comingSoon
+				? <p className={styles.disabledLink}>Coming soon</p>
+				: (
+					<Link href="/levels/[slug]" as={`/levels/${level.slug}`}>
+						<a className={styles.link}>Learn more</a>
+					</Link>
+				)
+			}
 		</div>
 	</article>
 )
