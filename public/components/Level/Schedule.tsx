@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import createStripeSession from 'lib/createStripeSession'
+
 import styles from 'styles/components/Level/Schedule.module.scss'
 
 const LevelSchedule = () => {
@@ -31,7 +33,12 @@ const LevelSchedule = () => {
 						</td>
 						<td className={styles.value}>$500</td>
 						<td className={styles.value}>
-							<button className={styles.button}>Enroll</button>
+							<button
+								className={styles.button}
+								onClick={() => createStripeSession('level', { level: 1 })}
+							>
+								Enroll
+							</button>
 						</td>
 					</tr>
 				</tbody>
