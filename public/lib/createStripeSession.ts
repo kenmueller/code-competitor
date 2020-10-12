@@ -17,7 +17,7 @@ let _stripe: Promise<Stripe> | null = null
 const createStripeSession: CreateStripeSession = async (type, data) => {
 	try {
 		const stripe = await (_stripe ??= loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY))
-		const sessionId = await _createStripeSession({ type, ...data })
+		const { data: sessionId } = await _createStripeSession({ type, ...data })
 		
 		if (typeof sessionId !== 'string')
 			throw new Error('An unknown error occurred')
