@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import { ToastContainer } from 'react-toastify'
 
 import identifyHubSpotUser from 'lib/identifyHubSpotUser'
 import { src as icon } from 'images/logos/icon.png'
@@ -40,6 +41,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 				<meta key="twitter-domain" name="twitter:domain" content="codecompetitor.com" />
 			</Head>
 			<Component {...pageProps} />
+			<ToastContainer />
 		</>
 	)
 }

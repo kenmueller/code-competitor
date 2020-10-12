@@ -21,6 +21,7 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-optimized-image": "^0.4.1",
+		"react-toastify": "^6.0.9",
 		"sass": "^1.27.0",
 		"string-strip-html": "^6.0.5"
 	},
