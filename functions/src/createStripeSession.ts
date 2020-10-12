@@ -1,11 +1,10 @@
-import { config, https } from 'firebase-functions'
+import { https } from 'firebase-functions'
 import Stripe from 'stripe'
 
-const FIRST_LEVEL = 0
-const LAST_LEVEL = 11
+import { STRIPE_KEY, BASE_URL, FIRST_LEVEL, LAST_LEVEL } from './constants'
 
 // @ts-ignore
-const stripe = new Stripe(config().stripe.key)
+const stripe = new Stripe(STRIPE_KEY)
 const { onCall, HttpsError } = https
 
 const isValidLevel = (level: any): level is number =>
@@ -19,7 +18,7 @@ export default onCall(async data => {
 			if (!isValidLevel(level))
 				throw new HttpsError('invalid-argument', 'Invalid level')
 			
-			const url = `https://codecompetitor.com/levels/level-${level}`
+			const url = `${BASE_URL}/levels/level-${level}`
 			
 			try {
 				const session = await stripe.checkout.sessions.create({
