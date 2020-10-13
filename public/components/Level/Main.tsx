@@ -11,11 +11,10 @@ import rightArrow from 'images/icons/right-arrow.svg'
 import styles from 'styles/components/Level/Main.module.scss'
 
 export interface LevelMainProps {
-	number: number
 	lastSession: number
 }
 
-const LevelMain = ({ number, lastSession }: LevelMainProps) => {
+const LevelMain = ({ lastSession }: LevelMainProps) => {
 	const slug = useRouter().query.slug as string
 	const level: Level = require(`articles/levels/${slug}/index.mdx`).meta
 	
@@ -31,7 +30,7 @@ const LevelMain = ({ number, lastSession }: LevelMainProps) => {
 				</Link>
 			</p>
 			<Info />
-			<Schedule number={number} />
+			<Schedule />
 			<Sessions last={lastSession} />
 		</main>
 	)
