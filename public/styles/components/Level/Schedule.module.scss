@@ -1,3 +1,5 @@
+@use '../../spinner' as *;
+
 $padding: 30px;
 
 .root {
@@ -75,12 +77,14 @@ $padding: 30px;
 }
 
 .button {
+	--color: #1486e7;
+	
 	width: 120px;
 	padding: 8px 0;
 	text-decoration: none;
 	font-size: 16px;
 	font-weight: bold;
-	color: #1486e7;
+	color: var(--color);
 	background: white;
 	border: 1px solid #d8ebfb;
 	border-radius: 6px;
@@ -88,7 +92,8 @@ $padding: 30px;
 	
 	&:hover,
 	&:active {
-		color: white;
+		--color: white;
+		
 		background: #1486e7;
 		border-color: #1486e7;
 	}
@@ -96,4 +101,11 @@ $padding: 30px;
 	&:active {
 		transform: translateY(2px);
 	}
+}
+
+.spinner {
+	@include spinner(16px, 3px, var(--color));
+	
+	margin-bottom: -2px;
+	transition: border-color 0.3s;
 }
