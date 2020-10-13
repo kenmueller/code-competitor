@@ -1,0 +1,9 @@
+.page {
+	height: 100vh;
+	overflow: hidden;
+	filter: blur(4px);
+}
+
+.confetti {
+	z-index: 30 !important;
+}

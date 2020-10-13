@@ -1,0 +1,67 @@
+.root {
+	display: flex;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 20px;
+	background: transparentize(black, 0.5);
+	z-index: 20;
+}
+
+.content {
+	max-width: 650px;
+	width: 100%;
+	margin: auto;
+	padding: 20px;
+	background: #051e34;
+	border-radius: 15px;
+}
+
+.icon {
+	text-align: center;
+	font-size: 80px;
+}
+
+.title {
+	margin: 8px 0 30px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 900;
+	color: white;
+}
+
+.name {
+	color: #f85ea1;
+}
+
+.link {
+	display: block;
+	max-width: max-content;
+	margin: 0 auto 12px;
+	padding: 8px 20px;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 900;
+	color: white;
+	background: #1486e7;
+	border-radius: 13px;
+	transition: color 0.3s, background 0.3s, transform 0.3s;
+	
+	&:hover,
+	&:focus {
+		color: #1486e7;
+		background: white;
+	}
+	
+	&:active {
+		transform: translateY(2px);
+	}
+}
+
+.linkIcon {
+	vertical-align: middle;
+	margin-left: 8px;
+	transform: translateY(-1px);
+}
