@@ -1,23 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-import LevelInstance from 'models/LevelInstance'
-import getLevelInstances from 'lib/getLevelInstances'
-import handleError from 'lib/handleError'
+import useLevelInstances from 'hooks/useLevelInstances'
 import ScheduleRow from './ScheduleRow'
 import Spinner from 'components/Spinner'
 
 import styles from 'styles/components/Level/Schedule.module.scss'
 
+const LABEL_COUNT = 7
+
 const LevelSchedule = () => {
 	const slug = useRouter().query.slug as string | undefined
-	const [levels, setLevels] = useState<LevelInstance[] | null>(null)
-	
-	useEffect(() => {
-		slug && getLevelInstances(slug)
-			.then(setLevels)
-			.catch(handleError)
-	}, [slug, setLevels])
+	const levels = useLevelInstances(slug)
 	
 	return (
 		<section id="schedule" className={styles.root}>
@@ -35,9 +29,16 @@ const LevelSchedule = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{levels?.map(level => (
-						<ScheduleRow key={level.id} level={level} />
-					))}
+					{levels
+						? levels.map(level => <ScheduleRow key={level.id} level={level} />)
+						: (
+							<tr>
+								<td colSpan={LABEL_COUNT}>
+									<Spinner className={styles.spinner} />
+								</td>
+							</tr>
+						)
+					}
 				</tbody>
 			</table>
 		</section>

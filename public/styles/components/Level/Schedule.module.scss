@@ -1,3 +1,5 @@
+@use '../../spinner' as *;
+
 .root {
 	max-width: 1000px;
 	margin: 30px auto 0;
@@ -49,4 +51,11 @@
 
 .row:nth-child(even) {
 	background: #ebf5fd;
+}
+
+.spinner {
+	@include spinner(24px, 4px, #1486e7);
+	
+	display: block;
+	margin: 30px auto;
 }
