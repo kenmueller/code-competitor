@@ -6,7 +6,6 @@ import { getNumberFromLevelSlug } from './utils'
 import { BASE_URL, LEVEL_PRICE } from './constants'
 
 const { onCall, HttpsError } = https
-const { FieldValue } = admin.firestore
 const firestore = admin.firestore()
 
 export default onCall(async data => {
@@ -25,8 +24,9 @@ export default onCall(async data => {
 			if (number === null)
 				throw new HttpsError('invalid-argument', 'Invalid slug')
 			
-			const doc = firestore.doc(`levels/${slug}/instances/${instance}`)
-			const snapshot = await doc.get()
+			const snapshot = await firestore
+				.doc(`levels/${slug}/instances/${instance}`)
+				.get()
 			
 			if (!snapshot.exists)
 				throw new HttpsError('not-found', 'Instance not found')
@@ -54,10 +54,6 @@ export default onCall(async data => {
 					mode: 'payment',
 					success_url: `${url}/success`,
 					cancel_url: url
-				})
-				
-				await doc.update({
-					spots: FieldValue.increment(-1)
 				})
 				
 				return id
