@@ -15,6 +15,8 @@ export interface LevelScheduleRowProps {
 	level: LevelInstance
 }
 
+const ENROLL_MESSAGE_MAX_SPOTS = 3
+
 const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	const slug = useRouter().query.slug as string
 	const [isLoading, setIsLoading] = useState(false)
@@ -43,17 +45,24 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 			<td className={styles.value}>{time}</td>
 			<td className={styles.value}>
 				<Link href="/instructors/[slug]" as={`/instructors/${instructor}`}>
-					<a className={styles.link}>{instructorName}</a>
+					<a className={styles.instructorLink}>{instructorName}</a>
 				</Link>
 			</td>
 			<td className={styles.value}>$500</td>
 			<td className={styles.value}>
-				<button className={styles.button} onClick={enroll}>
-					{isLoading
-						? <Spinner className={styles.spinner} />
-						: `Enroll (${spots} spots remaining)`
-					}
-				</button>
+				<div className={styles.enrollContainer}>
+					<button className={styles.enrollButton} onClick={enroll}>
+						{isLoading
+							? <Spinner className={styles.enrollSpinner} />
+							: 'Enroll'
+						}
+					</button>
+					{spots > 0 && spots <= ENROLL_MESSAGE_MAX_SPOTS && (
+						<p className={styles.enrollMessage}>
+							<span className={styles.spots}>{spots}</span> spot{spots === 1 ? '' : 's'} left
+						</p>
+					)}
+				</div>
 			</td>
 		</tr>
 	)

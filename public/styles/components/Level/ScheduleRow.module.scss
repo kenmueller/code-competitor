@@ -12,7 +12,6 @@
 	
 	&:last-child {
 		padding-right: $padding;
-		text-align: right;
 	}
 }
 
@@ -20,7 +19,7 @@
 	text-transform: capitalize;
 }
 
-.link {
+.instructorLink {
 	display: inline-block;
 	text-decoration: none;
 	font-weight: bold;
@@ -37,10 +36,15 @@
 	}
 }
 
-.button {
+.enrollContainer {
+	width: 120px;
+	margin-left: auto;
+}
+
+.enrollButton {
 	--color: #1486e7;
 	
-	width: 120px;
+	width: 100%;
 	padding: 8px 0;
 	text-decoration: none;
 	font-size: 16px;
@@ -64,9 +68,21 @@
 	}
 }
 
-.spinner {
+.enrollSpinner {
 	@include spinner(16px, 3px, var(--color));
 	
 	margin-bottom: -2px;
 	transition: border-color 0.3s;
+}
+
+.enrollMessage {
+	margin-top: 6px;
+	text-align: center;
+	font-size: 14px;
+	color: #555;
+}
+
+.spots {
+	font-weight: bolder;
+	color: #e35050;
 }
