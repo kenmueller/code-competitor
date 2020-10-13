@@ -20,6 +20,12 @@
 			"**/.*",
 			"**/node_modules/**"
 		],
+		"rewrites": [
+			{
+				"source": "/api/stripe/charge.succeeded",
+				"function": "stripeChargeSucceeded"
+			}
+		],
 		"headers": [
 			{
 				"source": "**",

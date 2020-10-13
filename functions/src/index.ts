@@ -5,3 +5,4 @@ initializeApp({
 })
 
 export { default as createStripeSession } from './createStripeSession'
+export { default as stripeChargeSucceeded } from './stripeChargeSucceeded'
