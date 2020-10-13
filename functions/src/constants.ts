@@ -10,3 +10,5 @@ export const BASE_URL = 'https://codecompetitor.com'
 
 export const FIRST_LEVEL = 0
 export const LAST_LEVEL = 11
+
+export const LEVEL_PRICE = 50000

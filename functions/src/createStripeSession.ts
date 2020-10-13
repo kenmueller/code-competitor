@@ -1,7 +1,7 @@
 import { https } from 'firebase-functions'
 import Stripe from 'stripe'
 
-import { STRIPE_KEY, BASE_URL, FIRST_LEVEL, LAST_LEVEL } from './constants'
+import { STRIPE_KEY, BASE_URL, FIRST_LEVEL, LAST_LEVEL, LEVEL_PRICE } from './constants'
 
 // @ts-ignore
 const stripe = new Stripe(STRIPE_KEY)
@@ -30,7 +30,7 @@ export default onCall(async data => {
 								product_data: {
 									name: `Level ${level}`
 								},
-								unit_amount: 500
+								unit_amount: LEVEL_PRICE
 							},
 							quantity: 1
 						}
