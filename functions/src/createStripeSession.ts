@@ -1,34 +1,50 @@
 import { https } from 'firebase-functions'
-import Stripe from 'stripe'
+import * as admin from 'firebase-admin'
 
-import { STRIPE_KEY, BASE_URL, FIRST_LEVEL, LAST_LEVEL, LEVEL_PRICE } from './constants'
+import stripe from './stripe'
+import { getNumberFromLevelSlug } from './utils'
+import { BASE_URL, LEVEL_PRICE } from './constants'
 
-// @ts-ignore
-const stripe = new Stripe(STRIPE_KEY)
 const { onCall, HttpsError } = https
-
-const isValidLevel = (level: any): level is number =>
-	typeof level === 'number' && Number.isInteger(level) && level >= FIRST_LEVEL && level <= LAST_LEVEL
+const { FieldValue } = admin.firestore
+const firestore = admin.firestore()
 
 export default onCall(async data => {
 	switch (data.type) {
 		case 'level':
-			const { level } = data
+			const { slug, instance } = data
 			
-			if (!isValidLevel(level))
-				throw new HttpsError('invalid-argument', 'Invalid level')
+			if (typeof slug !== 'string')
+				throw new HttpsError('invalid-argument', 'Invalid slug')
 			
-			const url = `${BASE_URL}/levels/level-${level}`
+			if (!(typeof instance === 'string' && instance))
+				throw new HttpsError('invalid-argument', 'Invalid instance')
+			
+			const number = getNumberFromLevelSlug(slug)
+			
+			if (number === null)
+				throw new HttpsError('invalid-argument', 'Invalid slug')
+			
+			const doc = firestore.doc(`levels/${slug}/instances/${instance}`)
+			const snapshot = await doc.get()
+			
+			if (!snapshot.exists)
+				throw new HttpsError('not-found', 'Instance not found')
+			
+			if (snapshot.get('spots') <= 0)
+				throw new HttpsError('failed-precondition', 'There are no spots remaining')
+			
+			const url = `${BASE_URL}/levels/${slug}`
 			
 			try {
-				const session = await stripe.checkout.sessions.create({
+				const { id } = await stripe.checkout.sessions.create({
 					payment_method_types: ['card'],
 					line_items: [
 						{
 							price_data: {
 								currency: 'usd',
 								product_data: {
-									name: `Level ${level}`
+									name: `Level ${number}`
 								},
 								unit_amount: LEVEL_PRICE
 							},
@@ -40,7 +56,11 @@ export default onCall(async data => {
 					cancel_url: url
 				})
 				
-				return session.id
+				await doc.update({
+					spots: FieldValue.increment(-1)
+				})
+				
+				return id
 			} catch (error) {
 				throw new HttpsError('internal', error.message)
 			}
