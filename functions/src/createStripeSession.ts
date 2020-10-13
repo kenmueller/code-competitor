@@ -37,7 +37,7 @@ export default onCall(async data => {
 					],
 					mode: 'payment',
 					success_url: `${url}/success`,
-					cancel_url: `${url}/cancel`
+					cancel_url: url
 				})
 				
 				return session.id
