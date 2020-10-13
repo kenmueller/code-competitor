@@ -25,8 +25,12 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	
 	const startString = useMemo(() => formatDate(start), [start])
 	const instructorName: string = require(`articles/instructors/${instructor}.mdx`).meta.name
+	const isFull = spots <= 0
 	
 	const enroll = useCallback(async () => {
+		if (isFull || isLoading)
+			return
+		
 		try {
 			setIsLoading(true)
 			await createStripeSession('level', { slug, instance })
@@ -35,7 +39,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 		}
 		
 		setIsLoading(false)
-	}, [slug, instance])
+	}, [isFull, isLoading, slug, instance, setIsLoading])
 	
 	return (
 		<tr>
@@ -51,15 +55,23 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 			<td className={styles.value}>$500</td>
 			<td className={styles.value}>
 				<div className={styles.enrollContainer}>
-					<button className={styles.enrollButton} onClick={enroll}>
+					<button
+						className={cx(styles.enrollButton, {
+							[styles.enrollButtonFull]: isFull,
+							[styles.enrollButtonLoading]: isLoading
+						})}
+						onClick={enroll}
+					>
 						{isLoading
 							? <Spinner className={styles.enrollSpinner} />
-							: 'Enroll'
+							: isFull ? 'Full' : 'Enroll'
 						}
 					</button>
 					{spots > 0 && spots <= ENROLL_MESSAGE_MAX_SPOTS && (
 						<p className={styles.enrollMessage}>
-							<span className={styles.spots}>{spots}</span> spot{spots === 1 ? '' : 's'} left
+							<span className={styles.spots}>
+								{spots}
+							</span> spot{spots === 1 ? '' : 's'} left
 						</p>
 					)}
 				</div>

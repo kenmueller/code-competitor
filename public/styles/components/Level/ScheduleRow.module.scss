@@ -55,17 +55,31 @@
 	border-radius: 6px;
 	transition: color 0.3s, background 0.3s, border-color 0.3s, transform 0.3s;
 	
-	&:hover,
-	&:active {
-		--color: white;
+	&:not(.enrollButtonFull):not(.enrollButtonLoading) {
+		&:hover,
+		&:active {
+			--color: white;
+			
+			background: #1486e7;
+			border-color: #1486e7;
+		}
 		
-		background: #1486e7;
-		border-color: #1486e7;
+		&:active {
+			transform: translateY(2px);
+		}
 	}
-	
-	&:active {
-		transform: translateY(2px);
-	}
+}
+
+.enrollButtonFull,
+.enrollButtonLoading {
+	cursor: default;
+}
+
+.enrollButtonFull {
+	text-transform: uppercase;
+	color: #949494;
+	background: #f2f2f2;
+	border-color: #f2f2f2;
 }
 
 .enrollSpinner {
