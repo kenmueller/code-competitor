@@ -14,7 +14,7 @@ const snapshotToLevelInstance = (snapshot: firebase.firestore.DocumentSnapshot) 
 	return {
 		...data,
 		id: snapshot.id,
-		start: data.start.toDate()
+		start: data.start?.toDate() ?? new Date()
 	} as LevelInstance
 }
 
