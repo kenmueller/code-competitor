@@ -1,0 +1,11 @@
+import Day from './Day'
+
+export default interface LevelInstance {
+	id: string
+	day: Day
+	start: Date
+	weeks: number
+	time: string
+	instructor: string
+	spots: number
+}
