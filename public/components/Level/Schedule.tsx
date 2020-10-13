@@ -1,29 +1,23 @@
-import { useState, useCallback } from 'react'
-import Link from 'next/link'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
-import createStripeSession from 'lib/createStripeSession'
+import LevelInstance from 'models/LevelInstance'
+import getLevelInstances from 'lib/getLevelInstances'
 import handleError from 'lib/handleError'
+import ScheduleRow from './ScheduleRow'
 import Spinner from 'components/Spinner'
 
 import styles from 'styles/components/Level/Schedule.module.scss'
 
-export interface LevelScheduleProps {
-	number: number
-}
-
-const LevelSchedule = ({ number }: LevelScheduleProps) => {
-	const [isLoading, setIsLoading] = useState(false)
+const LevelSchedule = () => {
+	const slug = useRouter().query.slug as string | undefined
+	const [levels, setLevels] = useState<LevelInstance[] | null>(null)
 	
-	const enroll = useCallback(async () => {
-		try {
-			setIsLoading(true)
-			await createStripeSession('level', { level: number })
-		} catch (error) {
-			handleError(error)
-		}
-		
-		setIsLoading(false)
-	}, [number])
+	useEffect(() => {
+		slug && getLevelInstances(slug)
+			.then(setLevels)
+			.catch(handleError)
+	}, [slug, setLevels])
 	
 	return (
 		<section id="schedule" className={styles.root}>
@@ -41,26 +35,9 @@ const LevelSchedule = ({ number }: LevelScheduleProps) => {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td className={styles.value}>Wednesday</td>
-						<td className={styles.value}>Sep 2, 2020</td>
-						<td className={styles.value}>16 weeks</td>
-						<td className={styles.value}>4:30-6:00 PM</td>
-						<td className={styles.value}>
-							<Link href="/instructors/[slug]" as="/instructors/ken-mueller">
-								<a className={styles.link}>Ken Mueller</a>
-							</Link>
-						</td>
-						<td className={styles.value}>$500</td>
-						<td className={styles.value}>
-							<button className={styles.button} onClick={enroll}>
-								{isLoading
-									? <Spinner className={styles.spinner} />
-									: 'Enroll'
-								}
-							</button>
-						</td>
-					</tr>
+					{levels?.map(level => (
+						<ScheduleRow key={level.id} level={level} />
+					))}
 				</tbody>
 			</table>
 		</section>
