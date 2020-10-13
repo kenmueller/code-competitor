@@ -12,11 +12,12 @@ import Footer from 'components/Footer'
 import styles from 'styles/components/Level/index.module.scss'
 
 export interface LevelPageProps {
+	number: number
 	description: string
 	lastSession: number
 }
 
-const LevelPage = ({ description, lastSession }: LevelPageProps) => {
+const LevelPage = ({ number, description, lastSession }: LevelPageProps) => {
 	const slug = useRouter().query.slug as string
 	const level: Level = require(`articles/levels/${slug}/index.mdx`).meta
 	
@@ -38,7 +39,7 @@ const LevelPage = ({ description, lastSession }: LevelPageProps) => {
 				]}
 				title={level.name}
 			/>
-			<Main lastSession={lastSession} />
+			<Main number={number} lastSession={lastSession} />
 			<Subscribe />
 			<Footer />
 		</>
