@@ -1,7 +1,5 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
-import { readdirSync } from 'fs'
-import { join } from 'path'
 
 import Head from 'components/Head'
 import Navbar from 'components/Navbar'
@@ -44,12 +42,7 @@ const LevelReady = ({ name }: LevelReadyProps) => {
 
 export default LevelReady
 
-export const getStaticPaths: GetStaticPaths = async () => ({
-	paths: readdirSync(join(process.cwd(), 'articles/levels'))
-		.filter(slug => !require(`articles/levels/${slug}/index.mdx`).meta.comingSoon)
-		.map(slug => ({ params: { slug } })),
-	fallback: false
-})
+export { default as getStaticPaths } from 'lib/level/getStaticPaths'
 
 export const getStaticProps: GetStaticProps = async ({ params }) => ({
 	props: {
