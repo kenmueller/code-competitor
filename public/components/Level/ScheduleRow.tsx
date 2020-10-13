@@ -44,10 +44,10 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	return (
 		<tr>
 			<td className={cx(styles.value, styles.days)}>{days.join(' & ')}</td>
-			<td className={styles.value}>{startString}</td>
+			<td className={cx(styles.value, styles.start)}>{startString}</td>
 			<td className={styles.value}>{weeks} week{weeks === 1 ? '' : 's'}</td>
 			<td className={styles.value}>{time}</td>
-			<td className={styles.value}>
+			<td className={cx(styles.value, styles.instructorLinkContainer)}>
 				<Link href="/instructors/[slug]" as={`/instructors/${instructor}`}>
 					<a className={styles.instructorLink}>{instructorName}</a>
 				</Link>
