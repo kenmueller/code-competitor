@@ -19,7 +19,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	const slug = useRouter().query.slug as string
 	const [isLoading, setIsLoading] = useState(false)
 	
-	const { id: instance, day, start, weeks, time, instructor, spots } = level
+	const { id: instance, days, start, weeks, time, instructor, spots } = level
 	
 	const startString = useMemo(() => formatDate(start), [start])
 	const instructorName: string = require(`articles/instructors/${instructor}.mdx`).meta.name
@@ -37,7 +37,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	
 	return (
 		<tr>
-			<td className={cx(styles.value, styles.day)}>{day}</td>
+			<td className={cx(styles.value, styles.days)}>{days.join(' & ')}</td>
 			<td className={styles.value}>{startString}</td>
 			<td className={styles.value}>{weeks} week{weeks === 1 ? '' : 's'}</td>
 			<td className={styles.value}>{time}</td>

@@ -2,7 +2,7 @@ import Day from './Day'
 
 export default interface LevelInstance {
 	id: string
-	day: Day
+	days: Day[]
 	start: Date
 	weeks: number
 	time: string
