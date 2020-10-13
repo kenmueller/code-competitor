@@ -42,7 +42,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 	}, [isFull, isLoading, slug, instance, setIsLoading])
 	
 	return (
-		<tr>
+		<tr className={styles.root}>
 			<td className={cx(styles.value, styles.days)}>{days.join(' & ')}</td>
 			<td className={cx(styles.value, styles.start)}>{startString}</td>
 			<td className={styles.value}>{weeks} week{weeks === 1 ? '' : 's'}</td>
@@ -52,7 +52,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 					<a className={styles.instructorLink}>{instructorName}</a>
 				</Link>
 			</td>
-			<td className={styles.value}>$500</td>
+			<td className={cx(styles.value, styles.price)}>$500</td>
 			<td className={cx(styles.value, styles.enrollContainer)}>
 				<div className={styles.enrollInnerContainer}>
 					<button

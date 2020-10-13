@@ -1,5 +1,33 @@
 @use '../../spinner' as *;
 
+.root {
+	display: block;
+	padding: 20px 24px;
+	border: 3px solid #f2f2f2;
+	border-radius: 12px;
+	
+	@media (min-width: 700px) {
+		display: table-row;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+	}
+	
+	&:nth-child(even) {
+		@media (min-width: 700px) {
+			background: #ebf5fd;
+		}
+	}
+	
+	& + & {
+		margin-top: 16px;
+		
+		@media (min-width: 700px) {
+			margin-top: 0;
+		}
+	}
+}
+
 .value {
 	--padding: 0px;
 	
@@ -28,6 +56,14 @@
 	
 	&:last-child {
 		padding-right: var(--padding);
+	}
+	
+	& + & {
+		margin-top: 8px;
+		
+		@media (min-width: 700px) {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -78,15 +114,22 @@
 	}
 }
 
+.price {
+	font-weight: bold;
+	
+	@media (min-width: 700px) {
+		font-weight: normal;
+	}
+}
+
 .enrollContainer {
 	--width: 120px;
-	--left-padding: 0px;
-	
-	width: calc(var(--width) + var(--left-padding));
 	
 	@media (min-width: 700px) {
 		--width: 100px;
 		--left-padding: 20px;
+		
+		width: calc(var(--width) + var(--left-padding));
 	}
 	
 	@media (min-width: 750px) {
@@ -104,7 +147,11 @@
 
 .enrollInnerContainer {
 	width: var(--width);
-	margin-left: auto;
+	margin: 20px auto 0;
+	
+	@media (min-width: 700px) {
+		margin: 0 0 0 auto;
+	}
 }
 
 .enrollButton {
