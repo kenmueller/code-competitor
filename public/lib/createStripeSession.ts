@@ -6,7 +6,7 @@ import firebase from './firebase'
 import 'firebase/functions'
 
 interface CreateStripeSession {
-	(type: 'level', data: { level: number }): Promise<void>
+	(type: 'level', data: { slug: string, instance: string }): Promise<void>
 }
 
 const _createStripeSession = firebase.functions().httpsCallable('createStripeSession')
