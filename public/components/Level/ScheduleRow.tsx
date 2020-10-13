@@ -53,8 +53,8 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 				</Link>
 			</td>
 			<td className={styles.value}>$500</td>
-			<td className={styles.value}>
-				<div className={styles.enrollContainer}>
+			<td className={cx(styles.value, styles.enrollContainer)}>
+				<div className={styles.enrollInnerContainer}>
 					<button
 						className={cx(styles.enrollButton, {
 							[styles.enrollButtonFull]: isFull,

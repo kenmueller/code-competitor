@@ -1,17 +1,26 @@
 @use '../../spinner' as *;
 
 .value {
-	$padding: 30px;
+	--padding: 15px;
 	
-	padding: $padding 0;
+	padding: var(--padding) 0;
+	font-size: 14px;
 	color: #555;
 	
+	@media (min-width: 750px) {
+		--padding: 30px;
+	}
+	
+	@media (min-width: 850px) {
+		font-size: 16px;
+	}
+	
 	&:first-child {
-		padding-left: $padding;
+		padding-left: var(--padding);
 	}
 	
 	&:last-child {
-		padding-right: $padding;
+		padding-right: var(--padding);
 	}
 }
 
@@ -37,7 +46,26 @@
 }
 
 .enrollContainer {
-	width: 120px;
+	--width: 100px;
+	--left-padding: 20px;
+	
+	width: calc(var(--width) + var(--left-padding));
+	
+	@media (min-width: 750px) {
+		--left-padding: 40px;
+	}
+	
+	@media (min-width: 800px) {
+		--width: 120px;
+	}
+	
+	@media (min-width: 900px) {
+		width: auto;
+	}
+}
+
+.enrollInnerContainer {
+	width: var(--width);
 	margin-left: auto;
 }
 
