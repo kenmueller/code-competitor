@@ -66,7 +66,7 @@
 	right: 0;
 	margin-top: 8px;
 	pointer-events: none;
-	width: 300px;
+	width: 200px;
 	padding: 16px;
 	background: white;
 	border-radius: 8px;
@@ -74,6 +74,14 @@
 	opacity: 0;
 	transform: translateY(8px);
 	transition: opacity 0.2s, transform 0.2s;
+	
+	@media (min-width: 320px) {
+		width: 250px;
+	}
+	
+	@media (min-width: 400px) {
+		width: 300px;
+	}
 }
 
 .menuContentShowing {
