@@ -23,9 +23,14 @@ writeFile(join(OUT_PATH, 'sitemap.xml'), createXml(
 					.replace(/>/g, '&gt;')
 					.replace(/</g, '&lt;')
 				
-				return pathname === '/404'
-					? acc
-					: [...acc, { loc: `${BASE_URL}${pathname}` }]
+				if (pathname === '/404')
+					return acc
+				
+				const loc = `${BASE_URL}${pathname}`
+				
+				console.log(`Found URL: ${loc}`)
+				
+				return [...acc, { loc }]
 			}, [])
 		}
 	}
