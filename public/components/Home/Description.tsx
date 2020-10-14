@@ -1,12 +1,17 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import { Svg } from 'react-optimized-image'
 
+import { src as background } from 'images/home/description.png'
 import owl from 'images/icons/owl.svg'
 
 import styles from 'styles/components/Home/Description.module.scss'
 
 const HomeDescription = () => (
 	<section className={styles.root}>
+		<Head>
+			<link key="preload-home-description" rel="preload" as="image" href={background} />
+		</Head>
 		<article className={styles.container}>
 			<div className={styles.content}>
 				<p className={styles.description}>

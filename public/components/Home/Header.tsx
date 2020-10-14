@@ -1,10 +1,16 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import cx from 'classnames'
+
+import { src as background } from 'images/home/header.png'
 
 import styles from 'styles/components/Home/Header.module.scss'
 
 const HomeHeader = () => (
 	<header className={styles.root}>
+		<Head>
+			<link key="preload-home-header" rel="preload" as="image" href={background} />
+		</Head>
 		<h1 className={styles.title}>
 			From 0 to Competitive
 		</h1>

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router'
+import NextHead from 'next/head'
 
 import Level from 'models/Level'
 import Head from 'components/Head'
@@ -8,6 +9,8 @@ import Breadcrumbs from 'components/Breadcrumbs'
 import Main from 'components/Level/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
+
+import { src as background } from 'images/level/header.png'
 
 import styles from 'styles/components/Level/index.module.scss'
 
@@ -27,6 +30,9 @@ const LevelPage = ({ description, lastSession }: LevelPageProps) => {
 				title={`${level.name} - Code Competitor`}
 				description={description}
 			/>
+			<NextHead>
+				<link key="preload-level-header" rel="preload" as="image" href={background} />
+			</NextHead>
 			<Navbar light />
 			<Header className={styles.header} title={level.name}>
 				{level.subtitle}
