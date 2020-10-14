@@ -1,0 +1,21 @@
+.trigger {
+	margin-top: 12px;
+	padding: 8px 20px;
+	font-size: 18px;
+	font-weight: 900;
+	color: white;
+	background: #1486e7;
+	border: 2px solid #1486e7;
+	border-radius: 12px;
+	transition: color 0.3s, background 0.3s, transform 0.3s;
+	
+	&:hover,
+	&:focus {
+		color: #1486e7;
+		background: white;
+	}
+	
+	&:active {
+		transform: translateY(2px);
+	}
+}
