@@ -1,100 +1,24 @@
-## Problem 1 (USACO 2018)
+import Hidden from 'components/Hidden'
 
-Bessie the cow used to have such a nice view from her barn, looking across road at a set of two billboards advertising delicious looking cow feed. Unfortunately, one of these billboards has recently been updated so it now advertises "Farmer Larry's Lawnmowers". Bessie is not a fan of lawnmowers since their only purpose, as far as she can tell, is cutting back the grass in her field that she finds so tasty (if you haven't noticed, much of Bessie's thought process revolves around food).
+> Level 0 is for students who have never programmed before, or have programmed but not in the C++ programming language. It can also be a nice refresher class if you haven’t programmed in C++ in a while.
 
-Fortunately, the remaining cow feed billboard is situated in front of the lawnmower billboard, potentially obscuring it. Bessie, determined to remove the offensive lawnmower billboard completely from her view, hatches a risky plan. She plans to steal a large rectangular tarp from the barn and sneak out late at night to cover the remaining portion of the lawnmower billboard, so that she can no longer see any part of it.
+# Questions
 
-Given the locations of the two billboards, please help Bessie compute the minimum area of the tarp she will need. Since the only tarps available in the barn are rectangular in size, Bessie observes that she may conceivably need a tarp whose area is slightly larger than the exposed area of the lawnmower billboard, as illustrated in the example below. The tarp may only be placed such that its sides are parallel to those of the other billboards (i.e., it cannot be "tilted").
+1. What is the remainder when 33 is divided by 4?
+2. If the number of apples in your basket is greater than 5, then eat two. Otherwise, eat one. You have 3 apples in your basket, how many apples do you eat?
+3. A file can contain:
+	1. A photo
+	2. Text
+	3. Folders
 
-INPUT FORMAT (file `billboard.in`):
+<Hidden trigger="Answers">
 
-The first line of input contains four space-separated integers: `x1 y1 x2 y2`, where `(x1,y1)` and `(x2,y2)` are the coordinates of the lower-left and upper-right corners of the lawnmower billboard in Bessie's 2D field of view. The next line contains four more integers, similarly specifying the lower-left and upper-right corners of the cow feed billboard. The cow feed billboard may obscure all, some, or none of the lawnmower billboard. All coordinates are in the range `-1000` to `+1000`.
+# Answers
 
-OUTPUT FORMAT (file `billboard.out`):
+1. 1
+2. 1
+3. A file can contain:
+	1. A photo
+	2. Text
 
-Please output the minimum area of the tarp Bessie needs to use to cover part of the lawnmower billboard so that it becomes completely obscured.
-
-SAMPLE INPUT:
-
-```
-2 1 7 4
-5 -1 10 3
-```
-
-SAMPLE OUTPUT:
-
-```
-15
-```
-
-Here, the cow feed billboard obscures the lower right corner of the lawnmower billboard, but this doesn't really help, since Bessie still needs to use a tarp whose size is as large as the entire lawnmower billboard.
-
-## Problem 2 (USACO 2018)
-
-Farmer John has opened a swimming pool for his cows, figuring it will help them relax and produce more milk. To ensure safety, he hires `N` cows as lifeguards, each of which has a shift that covers some contiguous interval of time during the day. For simplicity, the pool is open from time `t=0` until time `t=1000` on a daily basis, so each shift can be described by two integers, giving the time at which a cow starts and ends her shift. For example, a lifeguard starting at time `t=4` and ending at time `t=7` covers three units of time (note that the endpoints are "points" in time).
-
-Unfortunately, Farmer John hired 1 more lifeguard than he has the funds to support. Given that he must fire exactly one lifeguard, what is the maximum amount of time that can still be covered by the shifts of the remaining lifeguards? An interval of time is covered if at least one lifeguard is present.
-
-INPUT FORMAT (file `lifeguards.in`):
-
-The first line of input contains `N` (1≤N≤100). Each of the next `N` lines describes a lifeguard in terms of two integers in the range 0…1000, giving the starting and ending point of a lifeguard's shift. All such endpoints are distinct. Shifts of different lifeguards might overlap.
-
-OUTPUT FORMAT (file `lifeguards.out`):
-
-Please write a single number, giving the maximum amount of time that can still be covered if Farmer John fires `1` lifeguard.
-
-SAMPLE INPUT:
-
-```
-3
-5 9
-1 4
-3 7
-```
-
-SAMPLE OUTPUT:
-
-```
-7
-```
-
-## Problem 3 (USACO 2018)
-
-Feeling ambitious, Farmer John plans to attempt something that never seems to go quite right: he wants to take a photograph of his entire herd of cows. To make the photograph look nice, he wants the cows to line up in a single row from shortest to tallest. Unfortunately, right after he has the cows line up this way, Bessie the cow, always the troublemaker, steps out of line and re-inserts herself at some other location in the lineup!
-
-Farmer John would like to swap pairs of cows so the entire herd is again lined up properly. Please help him determine the minimum number of swaps he needs to make between pairs of cows in order to achieve this goal.
-
-INPUT FORMAT (file `outofplace.in`):
-
-The first line of input contains `N` (2≤N≤100). The next `N` lines describe the heights of the cows as they are lined up after Bessie makes her move. Each cow height is an integer in the range 1...1,000,000. Cows may have the same height.
-
-OUTPUT FORMAT (file `outofplace.out`):
-
-Please output the minimum number of times Farmer John needs to swap pairs of cows in order to achieve a proper ordering. Swaps do not necessarily need to involve adjacent cows in the ordering.
-
-SAMPLE INPUT:
-
-```
-6
-2
-4
-7
-7
-9
-3
-```
-
-SAMPLE OUTPUT:
-
-```
-3
-```
-
-In this example, Bessie is clearly the cow of height `3`. FJ return the cows to sorted order using three swaps as described below:
-
-```
-2 4 7 7 9 3 - Original Lineup
-2 4 7 7 3 9 - Swap the last two cows
-2 4 3 7 7 9 - Swap the first 7 and 3
-2 3 4 7 7 9 - Swap 4 and 3
-```
+</Hidden>
