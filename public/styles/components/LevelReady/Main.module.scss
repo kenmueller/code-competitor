@@ -3,6 +3,8 @@
 .root {
 	@include dots.right;
 	
+	display: flex;
+	flex-direction: column;
 	padding: 60px 15px 120px;
 	
 	@media (min-width: 500px) {
@@ -17,10 +19,12 @@
 .notice,
 .article {
 	max-width: 800px;
+	width: 100%;
 	margin: 0 auto;
 }
 
 .notice {
+	margin-bottom: 30px;
 	padding: 32px;
 	text-align: center;
 	font-size: 15px;
@@ -49,5 +53,5 @@
 }
 
 .article {
-	margin-top: 60px;
+	margin-top: 30px;
 }
