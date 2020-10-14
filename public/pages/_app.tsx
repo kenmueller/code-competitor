@@ -29,6 +29,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700;900&display=swap"
 				/>
+				<link key="sitemap" rel="sitemap" type="application/xml" href="/sitemap.xml" />
 				<link key="icon" rel="icon" href={icon} />
 				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.png" />
 				<link key="manifest" rel="manifest" href="/manifest.webmanifest" />
