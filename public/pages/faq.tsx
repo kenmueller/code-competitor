@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
@@ -14,7 +14,7 @@ export interface FAQProps {
 	questions: string[]
 }
 
-const FAQ = ({ questions }: FAQProps) => (
+const FAQ: NextPage<FAQProps> = ({ questions }) => (
 	<>
 		<Head
 			url="https://codecompetitor.com/faq"

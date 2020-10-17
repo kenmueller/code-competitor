@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
@@ -15,7 +15,7 @@ export interface InstructorsProps {
 	users: BasicInstructor[]
 }
 
-const InstructorProfile = ({ users }: InstructorsProps) => (
+const InstructorProfile: NextPage<InstructorsProps> = ({ users }) => (
 	<>
 		<Head
 			url="https://codecompetitor.com/instructors"

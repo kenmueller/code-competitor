@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 import Head from 'components/Head'
@@ -13,7 +13,7 @@ export interface LevelReadyProps {
 	name: string
 }
 
-const LevelReady = ({ name }: LevelReadyProps) => {
+const LevelReady: NextPage<LevelReadyProps> = ({ name }) => {
 	const slug = useRouter().query.slug as string
 	
 	return (

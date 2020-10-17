@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import { readdirSync } from 'fs'
 import { join } from 'path'
 
@@ -16,7 +16,7 @@ export interface JobsProps {
 	categories: JobCategory[]
 }
 
-const Jobs = ({ categories }: JobsProps) => (
+const Jobs: NextPage<JobsProps> = ({ categories }) => (
 	<>
 		<Head
 			url="https://codecompetitor.com/jobs"

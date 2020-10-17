@@ -1,3 +1,4 @@
+import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 import Head from 'components/Head'
@@ -7,7 +8,7 @@ import Main from 'components/404/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const NotFound = () => {
+const NotFound: NextPage = () => {
 	const path = useRouter().asPath
 	
 	return (

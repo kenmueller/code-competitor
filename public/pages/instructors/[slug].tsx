@@ -1,5 +1,5 @@
 import { renderToStaticMarkup } from 'react-dom/server'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { NextPage, GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import { readdirSync } from 'fs'
 import { join } from 'path'
@@ -17,7 +17,7 @@ export interface InstructorProfileProps {
 	bio: string
 }
 
-const InstructorProfile = ({ bio }: InstructorProfileProps) => {
+const InstructorProfile: NextPage<InstructorProfileProps> = ({ bio }) => {
 	const slug = useRouter().query.slug as string
 	const { name } = require(`articles/instructors/${slug}.mdx`).meta
 	

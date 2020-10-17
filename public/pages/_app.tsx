@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { ToastContainer } from 'react-toastify'
@@ -8,7 +9,7 @@ import { src as icon } from 'images/logos/icon.png'
 
 import 'styles/global.scss'
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 	useEffect(() => {
 		const email = localStorage.getItem('email')
 		

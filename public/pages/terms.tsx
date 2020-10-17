@@ -1,3 +1,5 @@
+import { NextPage } from 'next'
+
 import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Header'
@@ -6,7 +8,7 @@ import Main from 'components/Terms/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const Terms = () => (
+const Terms: NextPage = () => (
 	<>
 		<Head
 			url="https://codecompetitor.com/terms"

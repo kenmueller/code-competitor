@@ -1,3 +1,5 @@
+import { NextPage } from 'next'
+
 import Head from 'components/Head'
 import Navbar from 'components/Navbar'
 import Header from 'components/Home/Header'
@@ -7,7 +9,7 @@ import Classes from 'components/Home/Classes'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-const Home = () => (
+const Home: NextPage = () => (
 	<>
 		<Head
 			url="https://codecompetitor.com"

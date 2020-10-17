@@ -1,3 +1,4 @@
+import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import Confetti from 'react-confetti'
 
@@ -7,7 +8,7 @@ import Modal from 'components/LevelSuccess/Modal'
 
 import styles from 'styles/components/LevelSuccess/index.module.scss'
 
-const LevelSuccess = (props: LevelPageProps) => {
+const LevelSuccess: NextPage<LevelPageProps> = props => {
 	const slug = useRouter().query.slug as string
 	const size = useWindowSize()
 	
