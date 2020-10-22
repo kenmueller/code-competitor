@@ -21,7 +21,7 @@ const HomeHeader = () => (
 		<nav className={styles.navigation}>
 			<Link href="/levels/[slug]" as="/levels/level-0">
 				<a className={cx(styles.navigationLink, styles.startNavigationLink)}>
-					Start with Basics
+					Start with Level 0
 				</a>
 			</Link>
 			<Link href="/courses">
