@@ -25,6 +25,7 @@
 		"react-optimized-image": "^0.4.1",
 		"react-toastify": "^6.0.9",
 		"sass": "^1.27.0",
+		"schema-dts": "^0.7.1",
 		"string-strip-html": "^6.2.0",
 		"xmlbuilder2": "^2.4.0"
 	},
