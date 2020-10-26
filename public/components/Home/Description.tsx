@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Svg } from 'react-optimized-image'
 
-import { src as background } from 'images/home/description.png'
+import { src as background } from 'images/home/description.jpg'
 import owl from 'images/icons/owl.svg'
 
 import styles from 'styles/components/Home/Description.module.scss'

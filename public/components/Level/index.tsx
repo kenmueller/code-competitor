@@ -10,7 +10,7 @@ import Main from 'components/Level/Main'
 import Subscribe from 'components/Subscribe'
 import Footer from 'components/Footer'
 
-import { src as background } from 'images/level/header.png'
+import { src as background } from 'images/level/header.jpg'
 
 import styles from 'styles/components/Level/index.module.scss'
 

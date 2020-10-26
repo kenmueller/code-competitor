@@ -4,8 +4,8 @@
 	"description": "From 0 to Competitive. Creating apps won't get you into a Top University. Placing in a Coding Competition can.",
 	"icons": [
 		{
-			"src": "/icons/512x512.png",
-			"type": "image/png",
+			"src": "/icons/512x512.jpg",
+			"type": "image/jpeg",
 			"sizes": "512x512",
 			"purpose": "any maskable"
 		}

@@ -1,6 +1,6 @@
 import NextHead from 'next/head'
 
-import { src as share } from 'images/logos/share.png'
+import { src as share } from 'images/logos/share.jpg'
 
 export interface HeadProps {
 	url: string

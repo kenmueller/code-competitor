@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { ToastContainer } from 'react-toastify'
 
 import identifyHubSpotUser from 'lib/identifyHubSpotUser'
-import { src as icon } from 'images/logos/icon.png'
+import { src as icon } from 'images/logos/icon.jpg'
 
 import 'styles/global.scss'
 
@@ -32,7 +32,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 				/>
 				<link key="sitemap" rel="sitemap" type="application/xml" href="/sitemap.xml" />
 				<link key="icon" rel="icon" href={icon} />
-				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.png" />
+				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.jpg" />
 				<link key="manifest" rel="manifest" href="/manifest.webmanifest" />
 				<meta key="theme-color" name="theme-color" content="white" />
 				<meta key="og-site-name" property="og:site_name" content="Code Competitor" />

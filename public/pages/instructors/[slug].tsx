@@ -25,7 +25,7 @@ const InstructorProfile: NextPage<InstructorProfileProps> = ({ bio }) => {
 		<>
 			<Head
 				url={`https://codecompetitor.com/instructors/${slug}`}
-				image={require(`images/instructors/${slug}.png`).src}
+				image={require(`images/instructors/${slug}.jpg`).src}
 				title={`${name} - Code Competitor`}
 				description={bio}
 			/>

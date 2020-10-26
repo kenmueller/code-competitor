@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import cx from 'classnames'
 
-import { src as background } from 'images/home/header.png'
+import { src as background } from 'images/home/header.jpg'
 
 import styles from 'styles/components/Home/Header.module.scss'
 

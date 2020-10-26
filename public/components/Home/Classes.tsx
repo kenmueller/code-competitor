@@ -1,6 +1,6 @@
 import Img from 'react-optimized-image'
 
-import image from 'images/home/classes.png'
+import image from 'images/home/classes.jpg'
 
 import styles from 'styles/components/Home/Classes.module.scss'
 
