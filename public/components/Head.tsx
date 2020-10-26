@@ -1,16 +1,52 @@
+import { useMemo } from 'react'
 import NextHead from 'next/head'
+import { Thing } from 'schema-dts'
 
-import { src as share } from 'images/logos/share.jpg'
+import share from 'images/logos/share.jpg'
 
-export interface HeadProps {
+const DEFAULT_DATA: Thing[] = [
+	{
+		'@type': 'WebSite',
+		url: 'https://codecompetitor.com',
+		name: 'Code Competitor',
+		description: 'From 0 to Competitive. Creating apps won\'t get you into a Top University. Placing in a Coding Competition can.',
+		inLanguage: 'en-US'
+	},
+	{
+		'@type': 'Organization',
+		url: 'https://codecompetitor.com',
+		logo: {
+			'@type': 'ImageObject',
+			url: `https://codecompetitor.com${share.src}`,
+			width: `${share.width}px`,
+			height: `${share.height}px`
+		}
+	}
+]
+
+export interface HeadProps<Data> {
 	url: string
 	image?: string
 	title: string
 	description: string
+	data?: Data
 }
 
-const Head = ({ url, image: _image, title, description }: HeadProps) => {
-	const image = _image ?? share
+const Head = <Data extends Thing[] = []>({
+	url,
+	image: _image,
+	title,
+	description,
+	data = [] as Data
+}: HeadProps<Data>) => {
+	const image = _image ?? share.src
+	
+	const html = useMemo(() => ({
+		__html: JSON.stringify({
+			'@context': 'https://schema.org',
+			'@graph': [...DEFAULT_DATA, ...data]
+		})
+	}), [data])
 	
 	return (
 		<NextHead>
@@ -23,6 +59,7 @@ const Head = ({ url, image: _image, title, description }: HeadProps) => {
 			<meta key="twitter-image" name="twitter:image" content={image} />
 			<meta key="twitter-title" name="twitter:title" content={title} />
 			<meta key="twitter-description" name="twitter:description" content={description} />
+			<script key="data" type="application/ld+json" dangerouslySetInnerHTML={html} />
 			<title key="title">{title}</title>
 		</NextHead>
 	)
