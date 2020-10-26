@@ -1,0 +1,36 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: Set up Node
+        uses: actions/setup-node@main
+        with:
+          node-version: '12'
+          check-latest: true
+      - name: Install dependencies for public
+        run: |
+          cd public
+          npm ci
+          cd ..
+      - name: Install dependencies for functions
+        run: |
+          cd functions
+          npm ci
+          cd ..
+      - name: Build public
+        run: npm run build -C public
+      - name: Deploy
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
