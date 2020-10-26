@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { ToastContainer } from 'react-toastify'
 
 import identifyHubSpotUser from 'lib/identifyHubSpotUser'
-import { src as icon } from 'images/logos/icon.jpg'
+import { src as icon } from 'images/logos/icon.png'
 
 import 'styles/global.scss'
 
