@@ -20,11 +20,14 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 	return (
 		<>
 			<Head>
-				<link
-					key="font-preconnect"
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-				/>
+				<link key="gstatic-preconnect" rel="preconnect" href="https://fonts.gstatic.com" />
+				<link key="fonts-preconnect" rel="preconnect" href="https://fonts.googleapis.com" />
+				<link key="hubspot-scripts-preconnect" rel="preconnect" href="https://js.hs-scripts.com" />
+				<link key="hubspot-banner-preconnect" rel="preconnect" href="https://js.hs-banner.com" />
+				<link key="hubspot-api-preconnect" rel="preconnect" href="https://api.hubspot.com" />
+				<link key="hubspot-forms-preconnect" rel="preconnect" href="https://forms.hubspot.com" />
+				<link key="bam-nr-data-preconnect" rel="preconnect" href="https://bam.nr-data.net" />
+				<link key="js-agent-newrelic-preconnect" rel="preconnect" href="https://js-agent.newrelic.com" />
 				<link
 					key="muli-font"
 					rel="stylesheet"
@@ -32,7 +35,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }) => {
 				/>
 				<link key="sitemap" rel="sitemap" type="application/xml" href="/sitemap.xml" />
 				<link key="icon" rel="icon" href={icon} />
-				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.jpg" />
+				<link key="apple-touch-icon" rel="apple-touch-icon" href="/icons/192x192.png" />
 				<link key="manifest" rel="manifest" href="/manifest.webmanifest" />
 				<meta key="theme-color" name="theme-color" content="white" />
 				<meta key="og-site-name" property="og:site_name" content="Code Competitor" />
