@@ -101,6 +101,10 @@
 		color: white;
 		background: #1486e7;
 		border-color: #1486e7;
+		
+		.linkIcon {
+			fill: white;
+		}
 	}
 	
 	&:active {
@@ -110,6 +114,8 @@
 
 .linkIcon {
 	vertical-align: middle;
+	fill: #1486e7;
+	transition: fill 0.3s;
 	
 	@media (min-width: 500px) {
 		display: none;

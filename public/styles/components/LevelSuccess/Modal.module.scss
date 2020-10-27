@@ -53,6 +53,10 @@
 	&:focus {
 		color: #1486e7;
 		background: white;
+		
+		.linkIcon {
+			fill: #1486e7;
+		}
 	}
 	
 	&:active {
@@ -63,5 +67,7 @@
 .linkIcon {
 	vertical-align: middle;
 	margin-left: 8px;
+	fill: white;
 	transform: translateY(-1px);
+	transition: fill 0.3s;
 }
