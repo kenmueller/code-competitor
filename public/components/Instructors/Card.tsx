@@ -10,7 +10,7 @@ export interface InstructorsMainCardProps {
 }
 
 const InstructorsMainCard = ({ user }: InstructorsMainCardProps) => (
-	<Link href="/instructors/[slug]" as={`/instructors/${user.slug}`}>
+	<Link href={`/instructors/${user.slug}`}>
 		<a className={styles.root}>
 			<div className={styles.imageContainer}>
 				<Img

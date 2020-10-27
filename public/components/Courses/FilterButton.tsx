@@ -11,11 +11,7 @@ export interface CoursesFilterButtonProps {
 }
 
 const CoursesFilterButton = ({ value, filter }: CoursesFilterButtonProps) => (
-	<Link
-		href={`/courses${value ? '/[tier]' : ''}`}
-		as={`/courses${value ? `/${value}` : ''}`}
-		scroll={false}
-	>
+	<Link href={`/courses${value ? `/${value}` : ''}`} scroll={false}>
 		<a className={cx(styles.root, { [styles.selected]: value === filter })}>
 			{value ?? 'all'}
 		</a>

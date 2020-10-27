@@ -22,7 +22,7 @@ const LevelMain = ({ lastSession }: LevelMainProps) => {
 		<main className={styles.root}>
 			<p className={styles.ready}>
 				Check if you or your child is ready for {level.name} by taking our brief{' '}
-				<Link href="/levels/[slug]/ready" as={`/levels/${slug}/ready`}>
+				<Link href={`/levels/${slug}/ready`}>
 					<a className={styles.readyLink}>
 						Readiness Test
 						<Svg className={styles.readyLinkIcon} src={rightArrow} />

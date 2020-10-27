@@ -19,7 +19,7 @@ const HomeHeader = () => (
 			Placing in a <strong>Coding Competition</strong> can
 		</p>
 		<nav className={styles.navigation}>
-			<Link href="/levels/[slug]" as="/levels/level-0">
+			<Link href="/levels/level-0">
 				<a className={cx(styles.navigationLink, styles.startNavigationLink)}>
 					Start with Level 0
 				</a>

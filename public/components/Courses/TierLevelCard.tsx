@@ -35,7 +35,7 @@ const TierLevelCard = ({ className, tier, level }: TierLevelCardProps) => (
 			{level.comingSoon
 				? <p className={styles.disabledLink}>Coming soon</p>
 				: (
-					<Link href="/levels/[slug]" as={`/levels/${level.slug}`}>
+					<Link href={`/levels/${level.slug}`}>
 						<a className={styles.link}>Learn more</a>
 					</Link>
 				)

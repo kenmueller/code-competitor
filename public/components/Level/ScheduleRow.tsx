@@ -48,7 +48,7 @@ const LevelScheduleRow = ({ level }: LevelScheduleRowProps) => {
 			<td className={styles.value}>{weeks} week{weeks === 1 ? '' : 's'}</td>
 			<td className={styles.value}>{time}</td>
 			<td className={cx(styles.value, styles.instructorLinkContainer)}>
-				<Link href="/instructors/[slug]" as={`/instructors/${instructor}`}>
+				<Link href={`/instructors/${instructor}`}>
 					<a className={styles.instructorLink}>{instructorName}</a>
 				</Link>
 			</td>
